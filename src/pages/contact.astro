@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact — Syntanic" description="Start a project with Syntanic. Tell us what you're building and we'll get back within 24 hours.">
+
+  <!-- PAGE BODY -->
+  <main class="min-h-svh bg-bg pt-24 pb-20 relative overflow-hidden">
+
+    <!-- Ambient glow -->
+    <div class="absolute top-0 left-0 w-[600px] h-[500px] pointer-events-none" style="background: radial-gradient(ellipse at 0% 0%, rgba(255,138,59,0.05) 0%, transparent 65%);"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[400px] pointer-events-none" style="background: radial-gradient(ellipse at 100% 100%, rgba(56,193,173,0.04) 0%, transparent 65%);"></div>
+
+    <div class="max-w-[1280px] mx-auto px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-start">
+
+        <!-- ── LEFT PANEL ────────────────────────────────── -->
+        <div class="lg:sticky lg:top-32 flex flex-col gap-10 relative">
+
+          <!-- Decorative bleed number -->
+          <div class="absolute -left-10 -top-8 font-display font-extrabold leading-none tracking-[-0.05em] text-white/[0.025] select-none pointer-events-none hidden lg:block" style="font-size: 22rem; line-height: 1;">S</div>
+
+          <div class="relative">
+            <div class="inline-flex items-center gap-2 font-mono text-xs tracking-[0.1em] uppercase text-accent mb-8 opacity-0 [animation:fadeUp_0.5s_ease_0.1s_forwards]">
+              <span class="w-[7px] h-[7px] bg-accent rounded-full [animation:blink_2s_ease-in-out_infinite]"></span>
+              Available for new projects
+            </div>
+
+            <h1 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-[0.93] opacity-0 [animation:fadeUp_0.7s_cubic-bezier(0.22,1,0.36,1)_0.2s_forwards]" style="font-size: clamp(3.5rem, 7vw, 6rem);">
+              Let's start<br />
+              <em class="italic text-accent">something</em><br />
+              great.
+            </h1>
+          </div>
+
+          <p class="font-body font-light text-lg leading-[1.75] text-muted max-w-sm opacity-0 [animation:fadeUp_0.6s_ease_0.5s_forwards]">
+            Tell us about your project and we'll get back to you within 24 hours with a clear path forward — no fluff, no hard sell.
+          </p>
+
+          <!-- Contact details -->
+          <div class="flex flex-col gap-4 opacity-0 [animation:fadeUp_0.6s_ease_0.7s_forwards]">
+            <div class="h-px bg-white/8 w-full"></div>
+            <a href="mailto:hello@syntanic.com" class="group flex items-center gap-3 no-underline">
+              <div class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-muted group-hover:border-accent/50 group-hover:text-accent transition-colors duration-200 shrink-0">
+                <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><path d="M3 5a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" stroke="currentColor" stroke-width="1.5"/><path d="M3 7l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <span class="font-display font-medium text-base text-muted group-hover:text-cream transition-colors duration-200">hello@syntanic.com</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="group flex items-center gap-3 no-underline">
+              <div class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-muted group-hover:border-accent/50 group-hover:text-accent transition-colors duration-200 shrink-0">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+              </div>
+              <span class="font-display font-medium text-base text-muted group-hover:text-cream transition-colors duration-200">linkedin.com/company/syntanic</span>
+            </a>
+          </div>
+
+          <!-- Typical response -->
+          <div class="flex items-center gap-4 px-5 py-4 rounded-xl border border-white/8 opacity-0 [animation:fadeUp_0.6s_ease_0.9s_forwards]">
+            <div class="w-2 h-2 rounded-full bg-teal shrink-0" style="box-shadow: 0 0 8px #38c1ad;"></div>
+            <p class="font-body text-base text-muted leading-snug">We typically respond within <span class="text-cream font-medium">24 hours</span> on business days.</p>
+          </div>
+        </div>
+
+        <!-- ── RIGHT PANEL — FORM ─────────────────────────── -->
+        <div class="opacity-0 [animation:fadeUp_0.7s_ease_0.4s_forwards]">
+          <form id="contact-form" class="flex flex-col gap-8" novalidate>
+
+            <!-- Name + Email row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="flex flex-col gap-2">
+                <label class="font-mono text-xs tracking-[0.08em] uppercase text-[#7a756c]">Your name <span class="text-accent">*</span></label>
+                <input type="text" name="name" placeholder="Jane Smith" required
+                  class="bg-transparent border-b border-white/[0.12] py-3 font-body text-base font-light text-cream outline-none transition-colors duration-200 w-full placeholder:text-dim focus:border-b-accent" />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="font-mono text-xs tracking-[0.08em] uppercase text-[#7a756c]">Email address <span class="text-accent">*</span></label>
+                <input type="email" name="email" placeholder="jane@company.com" required
+                  class="bg-transparent border-b border-white/[0.12] py-3 font-body text-base font-light text-cream outline-none transition-colors duration-200 w-full placeholder:text-dim focus:border-b-accent" />
+              </div>
+            </div>
+
+            <!-- Company -->
+            <div class="flex flex-col gap-2">
+              <label class="font-mono text-xs tracking-[0.08em] uppercase text-[#7a756c]">Company <span class="text-muted/60 font-normal normal-case font-body">(optional)</span></label>
+              <input type="text" name="company" placeholder="Acme Corp"
+                class="bg-transparent border-b border-white/[0.12] py-3 font-body text-base font-light text-cream outline-none transition-colors duration-200 w-full placeholder:text-dim focus:border-b-accent" />
+            </div>
+
+            <!-- Budget chips -->
+            <div class="flex flex-col gap-2">
+              <label class="font-mono text-xs tracking-[0.08em] uppercase text-[#7a756c]">Budget range</label>
+              <div class="flex flex-wrap gap-2" id="budget-chips">
+                {['Under $10k', '$10k – $50k', '$50k – $100k', '$100k+', 'Not sure yet'].map(b => (
+                  <button type="button"
+                    class="inline-flex items-center py-[0.45rem] px-4 bg-transparent border border-white/10 rounded-full font-display text-sm font-medium text-muted cursor-pointer transition-all duration-150 whitespace-nowrap hover:border-accent/40 hover:text-cream hover:bg-accent/[0.06] data-[active]:bg-accent data-[active]:border-accent data-[active]:text-bg data-[active]:font-bold data-[active]:shadow-[0_2px_12px_rgba(255,138,59,0.25)]"
+                    data-value={b}>{b}</button>
+                ))}
+              </div>
+              <input type="hidden" name="budget" id="budget-hidden" />
+            </div>
+
+            <!-- Message -->
+            <div class="flex flex-col gap-2">
+              <label class="font-mono text-xs tracking-[0.08em] uppercase text-[#7a756c]">Tell us about your project <span class="text-accent">*</span></label>
+              <textarea name="message" rows="5" placeholder="Describe what you're building, the problem it solves, and any constraints we should know about..." required
+                class="border border-white/[0.08] rounded-[10px] p-4 px-5 bg-white/[0.03] min-h-[140px] w-full font-body text-base font-light text-cream outline-none transition-colors duration-200 placeholder:text-dim focus:border-accent/40 focus:bg-accent/[0.03] resize-y"></textarea>
+            </div>
+
+            <!-- How did you hear -->
+            <div class="flex flex-col gap-2">
+              <label class="font-mono text-xs tracking-[0.08em] uppercase text-[#7a756c]">How did you hear about us? <span class="text-muted/60 font-normal normal-case font-body">(optional)</span></label>
+              <input type="text" name="referral" placeholder="Google, a friend, LinkedIn…"
+                class="bg-transparent border-b border-white/[0.12] py-3 font-body text-base font-light text-cream outline-none transition-colors duration-200 w-full placeholder:text-dim focus:border-b-accent" />
+            </div>
+
+            <!-- Submit -->
+            <div class="flex items-center justify-between gap-4 flex-wrap pt-2 border-t border-white/8">
+              <p class="font-body text-sm text-muted">No commitment required. We'll reply with a clear proposal.</p>
+              <button type="submit" id="submit-btn" class="inline-flex items-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-bg font-display font-bold text-base rounded-full transition-colors duration-200 shadow-[0_2px_20px_rgba(255,138,59,0.3)] hover:shadow-[0_6px_30px_rgba(255,138,59,0.45)] hover:-translate-y-px active:translate-y-0 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+                <span id="btn-text">Send message</span>
+                <svg id="btn-icon" width="16" height="16" viewBox="0 0 14 14" fill="none">
+                  <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg id="btn-spinner" class="hidden animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" stroke-dasharray="60" stroke-dashoffset="20"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Success message -->
+            <div id="success-msg" class="hidden items-start gap-4 p-6 rounded-xl border border-teal/30 bg-teal/5">
+              <div class="w-6 h-6 rounded-full bg-teal/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#38c1ad" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <p class="font-display font-semibold text-base text-cream mb-1">Message sent!</p>
+                <p class="font-body text-base text-muted">We've received your enquiry and will respond within 24 hours.</p>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+
+</Layout>
+
+<script>
+  /* Single-select chips (budget) */
+  document.querySelectorAll('#budget-chips button').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('#budget-chips button').forEach(c => c.removeAttribute('data-active'));
+      chip.setAttribute('data-active', '');
+      (document.getElementById('budget-hidden') as HTMLInputElement).value =
+        (chip as HTMLElement).dataset.value ?? '';
+    });
+  });
+
+  /* Form submit (mock) */
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const btn  = document.getElementById('submit-btn') as HTMLButtonElement;
+  const btnText    = document.getElementById('btn-text')!;
+  const btnIcon    = document.getElementById('btn-icon')!;
+  const btnSpinner = document.getElementById('btn-spinner')!;
+  const successMsg = document.getElementById('success-msg')!;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name  = (form.elements.namedItem('name')    as HTMLInputElement).value.trim();
+    const email = (form.elements.namedItem('email')   as HTMLInputElement).value.trim();
+    const msg   = (form.elements.namedItem('message') as HTMLTextAreaElement).value.trim();
+    if (!name || !email || !msg) {
+      [name ? null : 'name', email ? null : 'email', msg ? null : 'message'].forEach(field => {
+        if (!field) return;
+        const el = form.elements.namedItem(field) as HTMLElement;
+        el?.classList.add('!border-red-500');
+        setTimeout(() => el?.classList.remove('!border-red-500'), 3000);
+      });
+      return;
+    }
+
+    btn.disabled = true;
+    btnText.textContent = 'Sending…';
+    btnIcon.classList.add('hidden');
+    btnSpinner.classList.remove('hidden');
+
+    await new Promise(r => setTimeout(r, 1800));
+
+    form.querySelectorAll('input, textarea, button[type=button], button[type=submit]')
+      .forEach(el => ((el as HTMLElement).style.opacity = '0.4'));
+    btn.style.display = 'none';
+    successMsg.classList.remove('hidden');
+    successMsg.classList.add('flex');
+    successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+</script>

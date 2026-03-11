@@ -1,11 +1,822 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+
+  <!-- HERO -->
+  <section id="hero" class="relative min-h-svh flex flex-col justify-between pt-24 overflow-hidden">
+    <!-- Radial glow -->
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_70%_60%_at_80%_30%,rgba(255,138,59,0.05)_0%,transparent_70%)] pointer-events-none"></div>
+
+    <div class="flex-1 max-w-[1280px] w-full mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-12">
+
+      <!-- Left: text -->
+      <div>
+        <div class="inline-flex items-center gap-2 font-mono text-xs tracking-[0.1em] uppercase text-accent mb-8 opacity-0 [animation:fadeUp_0.5s_ease_0.1s_forwards]">
+          <span class="w-[7px] h-[7px] bg-accent rounded-full [animation:blink_2s_ease-in-out_infinite]"></span>
+          Available for new projects
+        </div>
+
+        <h1 class="font-display font-extrabold leading-[0.95] tracking-[-0.04em] text-cream flex flex-col mb-8"
+            style="font-size: clamp(2.4rem, 4vw, 4.8rem)">
+          <span class="block opacity-0 [animation:fadeUp_0.65s_cubic-bezier(0.22,1,0.36,1)_0.2s_forwards]">Meet your new</span>
+          <span class="block text-accent italic opacity-0 [animation:fadeUp_0.65s_cubic-bezier(0.22,1,0.36,1)_0.35s_forwards]">product development</span>
+          <span class="block opacity-0 [animation:fadeUp_0.65s_cubic-bezier(0.22,1,0.36,1)_0.5s_forwards]">department.</span>
+        </h1>
+
+        <div class="flex flex-col gap-6 opacity-0 [animation:fadeUp_0.65s_ease_0.65s_forwards]">
+          <p class="font-body font-light text-lg leading-[1.7] text-muted max-w-[400px]">
+            Full-stack product engineering for startups and scale-ups. From idea to production.
+          </p>
+          <div class="flex items-center gap-5">
+            <a href="/contact" class="inline-flex items-center gap-2 px-7 py-3 bg-accent hover:bg-accent-dark text-bg font-display font-bold text-base rounded-full transition-colors duration-200 no-underline shadow-[0_2px_16px_rgba(255,138,59,0.25)] hover:shadow-[0_6px_24px_rgba(255,138,59,0.35)] hover:-translate-y-px active:translate-y-0">
+              Start a project
+            </a>
+            <a href="#work" class="inline-flex items-center gap-2 font-display font-medium text-base text-muted hover:text-cream transition-colors duration-200 no-underline">
+              See our work ↓
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: floating product dashboard illustration -->
+      <div class="hidden lg:flex items-center justify-center opacity-0 [animation:fadeUp_0.8s_ease_0.3s_forwards]">
+        <div class="relative w-full max-w-[520px]">
+
+          <!-- Main dashboard window -->
+          <div class="rounded-2xl overflow-hidden border border-white/15 shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
+
+            <!-- Window chrome -->
+            <div class="flex items-center gap-3 px-4 py-3 bg-[#363634] border-b border-white/8">
+              <div class="flex gap-1.5">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
+              </div>
+              <div class="flex-1 mx-3 bg-[#2a2a28] rounded px-3 py-1 flex items-center gap-2">
+                <div class="w-2.5 h-2.5 rounded-full border border-white/20"></div>
+                <span class="font-mono text-xs text-muted/70">app.client.io — dashboard</span>
+              </div>
+            </div>
+
+            <!-- App body -->
+            <div class="bg-[#282826] flex" style="min-height: 300px;">
+
+              <!-- Sidebar -->
+              <div class="w-12 bg-[#1e1e1c] border-r border-white/8 py-4 flex flex-col items-center gap-3 shrink-0">
+                <div class="w-7 h-7 rounded-lg bg-accent flex items-center justify-center">
+                  <span class="font-display font-extrabold text-bg leading-none" style="font-size: 9px;">S</span>
+                </div>
+                <div class="mt-2 flex flex-col gap-2.5">
+                  <div class="w-7 h-7 rounded-lg bg-accent/15 flex items-center justify-center">
+                    <div class="w-3.5 h-3.5 rounded-sm bg-accent/60"></div>
+                  </div>
+                  {[0,1,2].map(() => (
+                    <div class="w-7 h-7 rounded-lg flex items-center justify-center">
+                      <div class="w-3.5 h-3.5 rounded-sm bg-white/15"></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Content area -->
+              <div class="flex-1 p-5 overflow-hidden">
+                <!-- Header row -->
+                <div class="flex items-center justify-between mb-5">
+                  <div>
+                    <div class="w-28 h-3 bg-white/25 rounded mb-1.5"></div>
+                    <div class="w-16 h-2 bg-white/12 rounded"></div>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="w-16 h-7 rounded-lg bg-white/8 border border-white/12"></div>
+                    <div class="w-20 h-7 rounded-lg bg-accent"></div>
+                  </div>
+                </div>
+
+                <!-- Metric cards -->
+                <div class="grid grid-cols-3 gap-2.5 mb-4">
+                  {[
+                    { val: '$2.4M', sub: '↑ 18%',  color: '#38c1ad' },
+                    { val: '99.9%', sub: 'Uptime',  color: '#ff8a3b' },
+                    { val: '48K',   sub: '↑ Users', color: '#5bc1e1' },
+                  ].map(s => (
+                    <div class="rounded-xl bg-[#323230] border border-white/8 p-3">
+                      <div class="w-12 h-1.5 bg-white/12 rounded mb-2.5"></div>
+                      <div class="font-display font-extrabold text-cream mb-1" style="font-size: 1.05rem;">{s.val}</div>
+                      <span class="font-mono text-xs" style={`color: ${s.color};`}>{s.sub}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <!-- Chart -->
+                <div class="rounded-xl bg-[#323230] border border-white/8 p-4">
+                  <div class="flex justify-between items-center mb-3">
+                    <div class="w-24 h-2.5 bg-white/20 rounded"></div>
+                    <div class="flex gap-1.5">
+                      <span class="font-mono text-xs px-2 py-0.5 rounded bg-white/8 text-muted/60">1W</span>
+                      <span class="font-mono text-xs px-2 py-0.5 rounded bg-accent/20 text-accent">1M</span>
+                      <span class="font-mono text-xs px-2 py-0.5 rounded bg-white/8 text-muted/60">3M</span>
+                    </div>
+                  </div>
+                  <svg width="100%" height="68" viewBox="0 0 360 68" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#ff8a3b" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#ff8a3b" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M0 52 C40 47,70 35,110 30 S185 16,225 20 S295 10,360 6 L360 68 L0 68Z" fill="url(#chartFill)"/>
+                    <path d="M0 52 C40 47,70 35,110 30 S185 16,225 20 S295 10,360 6" stroke="#ff8a3b" stroke-width="2" fill="none" stroke-linejoin="round"/>
+                    <path d="M0 58 C60 54,105 48,155 43 S255 36,305 32 S345 26,360 24" stroke="#38c1ad" stroke-width="1.5" fill="none" opacity="0.6"/>
+                    <circle cx="110" cy="30" r="3" fill="#ff8a3b"/>
+                    <circle cx="225" cy="20" r="3" fill="#ff8a3b"/>
+                    <circle cx="360" cy="6"  r="3" fill="#ff8a3b"/>
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Floating badge: Deployed -->
+          <div class="absolute -top-3 -right-4 flex items-center gap-2 bg-[#0f2a24] border border-teal/30 rounded-xl px-4 py-2.5 shadow-[0_8px_32px_rgba(0,0,0,0.5),0_0_16px_rgba(56,193,173,0.15)]">
+            <div class="w-2 h-2 rounded-full bg-teal shrink-0" style="box-shadow: 0 0 8px #38c1ad;"></div>
+            <span class="font-mono text-xs text-teal tracking-[0.07em]">DEPLOYED · v2.4.1</span>
+          </div>
+
+          <!-- Floating badge: Performance -->
+          <div class="absolute -bottom-3 -left-4 flex items-center gap-3 bg-[#2e2e2c] border border-white/12 rounded-xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+            <div>
+              <div class="font-mono text-xs text-muted/60 mb-0.5">Performance</div>
+              <div class="font-display font-extrabold text-cream" style="font-size: 1.1rem; line-height: 1;">98 / 100</div>
+            </div>
+            <div class="w-9 h-9 rounded-full border-2 border-accent/50 flex items-center justify-center shrink-0">
+              <span class="font-mono text-xs text-accent font-bold">A+</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats bar -->
+    <div class="flex items-center gap-10 flex-wrap px-10 py-6 border-t border-white/8 bg-bg2 opacity-0 [animation:fadeUp_0.6s_ease_1s_forwards]">
+      <div class="flex flex-col gap-0.5">
+        <span class="font-display font-extrabold text-2xl text-cream leading-none tracking-[-0.03em]">48+</span>
+        <span class="font-mono text-xs tracking-[0.08em] uppercase text-muted">Projects shipped</span>
+      </div>
+      <div class="w-px h-9 bg-white/8 shrink-0"></div>
+      <div class="flex flex-col gap-0.5">
+        <span class="font-display font-extrabold text-2xl text-cream leading-none tracking-[-0.03em]">7yr</span>
+        <span class="font-mono text-xs tracking-[0.08em] uppercase text-muted">In business</span>
+      </div>
+      <div class="w-px h-9 bg-white/8 shrink-0"></div>
+      <div class="flex flex-col gap-0.5">
+        <span class="font-display font-extrabold text-2xl text-cream leading-none tracking-[-0.03em]">100%</span>
+        <span class="font-mono text-xs tracking-[0.08em] uppercase text-muted">Client retention</span>
+      </div>
+      <div class="w-px h-9 bg-white/8 shrink-0"></div>
+      <div class="flex flex-wrap gap-2 ml-auto">
+        {['React', 'Node.js', 'TypeScript', 'Next.js', 'AWS', 'PostgreSQL'].map(t => (
+          <span class="px-3 py-1 bg-surface text-muted border border-white/8 rounded-full font-mono text-xs tracking-[0.04em]">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-28 bg-latte">
+    <div class="max-w-[1280px] mx-auto px-10">
+
+      <!-- Section header -->
+      <div class="flex items-end justify-between mb-14 gap-8">
+        <div>
+          <p class="font-mono text-xs tracking-[0.12em] uppercase text-[#8a8068] mb-4">01 — Services</p>
+          <h2 class="font-display font-extrabold text-bg tracking-[-0.04em] leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
+            What we<br /><em class="italic text-accent">do well</em>
+          </h2>
+        </div>
+        <p class="font-body font-light text-lg text-[#8a8068] max-w-xs text-right hidden lg:block leading-relaxed">
+          Seven capabilities, one cohesive team. Pick one or stack them all.
+        </p>
+      </div>
+      <!-- end header -->
+
+      <!-- BENTO GRID — responsive: 1 col mobile / 2 col tablet / 6 col desktop -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-3 auto-rows-auto">
+
+        <!-- ─── ROW 1 ─────────────────────────────────────────── -->
+
+        <!-- 01 Product Development — large dark featured card -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-4 bg-[#242423] rounded-2xl p-10 flex flex-col justify-between min-h-[340px] group cursor-pointer hover:bg-[#2a2a28] transition-colors duration-300 relative overflow-hidden">
+          <!-- Subtle dot-grid background texture -->
+          <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 24px 24px;"></div>
+          <!-- Hover arrow -->
+          <div class="absolute top-8 right-8 w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/30 group-hover:text-accent group-hover:border-accent/50 transition-all duration-300">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="relative">
+            <span class="font-mono text-xs tracking-[0.1em] text-accent/70 block mb-5">01</span>
+            <h3 class="font-display font-extrabold text-cream leading-none tracking-[-0.03em] mb-5" style="font-size: clamp(2rem, 3.5vw, 2.75rem)">Product<br/>Development</h3>
+            <p class="font-body font-light text-lg leading-[1.7] text-[#8a8580] max-w-md">We build all of our projects using a single tech stack including Laravel (backend), Nuxt.js/Vue.js (frontend), Flutter (mobile apps).</p>
+          </div>
+          <div class="relative flex items-end justify-between mt-6">
+            <div class="flex gap-2 flex-wrap">
+              {['Laravel', 'Vue.js / Nuxt', 'Flutter', 'REST APIs'].map(t => (
+                <span class="px-3 py-1 bg-white/8 text-white/40 border border-white/10 rounded-full font-mono text-xs tracking-wide">{t}</span>
+              ))}
+            </div>
+            <!-- Illustration -->
+            <svg width="80" height="62" viewBox="0 0 72 56" fill="none" class="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+              <rect x="22" y="4"  width="28" height="13" rx="5" fill="#ff8a3b"/>
+              <rect x="14" y="21" width="44" height="13" rx="5" fill="#38c1ad"/>
+              <rect x="6"  y="38" width="60" height="13" rx="5" fill="#f7f4e4" opacity="0.6"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 02 API Integrations — dark teal compact card -->
+        <div class="col-span-1 md:col-span-1 lg:col-span-2 rounded-2xl p-9 flex flex-col justify-between min-h-[340px] group cursor-pointer transition-all duration-300 relative overflow-hidden" style="background: #0b2622;">
+          <!-- Teal glow -->
+          <div class="absolute bottom-0 left-0 right-0 h-40 opacity-30" style="background: radial-gradient(ellipse at 50% 100%, #38c1ad 0%, transparent 70%);"></div>
+          <div class="relative">
+            <span class="font-mono text-xs tracking-[0.1em] block mb-5" style="color: #38c1ad; opacity: 0.6">02</span>
+            <!-- Large centered illustration -->
+            <div class="flex justify-center my-6">
+              <svg width="120" height="60" viewBox="0 0 120 60" fill="none">
+                <circle cx="20" cy="30" r="16" fill="#38c1ad" opacity="0.2"/>
+                <circle cx="20" cy="30" r="16" stroke="#38c1ad" stroke-width="2"/>
+                <circle cx="20" cy="30" r="7" fill="#38c1ad"/>
+                <circle cx="40" cy="30" r="4" fill="#38c1ad" opacity="0.5"/>
+                <circle cx="60" cy="30" r="4" fill="#38c1ad" opacity="0.35"/>
+                <circle cx="80" cy="30" r="4" fill="#38c1ad" opacity="0.5"/>
+                <circle cx="100" cy="30" r="16" fill="#38c1ad" opacity="0.2"/>
+                <circle cx="100" cy="30" r="16" stroke="#38c1ad" stroke-width="2"/>
+                <circle cx="100" cy="30" r="7" fill="#38c1ad"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-extrabold leading-tight tracking-[-0.03em] text-2xl mt-4" style="color: #a8e8e0;">API Integrations</h3>
+          </div>
+          <p class="font-body font-light text-base leading-[1.7] relative" style="color: #5a9e98;">We pride ourselves on clean, well-tested integrations that are reliable and keep data in sync. APIs we've worked with include Google, Facebook, Okta, Stripe, and Salesforce.</p>
+        </div>
+
+        <!-- ─── ROW 2 ─────────────────────────────────────────── -->
+
+        <!-- 03 UI/UX Design — warm yellow light card, tall -->
+        <div class="col-span-1 md:col-span-1 lg:col-span-2 rounded-2xl p-9 flex flex-col justify-between group cursor-pointer transition-all duration-300 relative overflow-hidden" style="background: #fffbee; min-height: 360px;">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl"></div>
+          <div>
+            <span class="font-mono text-xs tracking-[0.1em] text-[#c49a00] block mb-5">03</span>
+            <svg width="68" height="54" viewBox="0 0 72 56" fill="none" class="mb-6">
+              <rect x="6"  y="4"  width="60" height="42" rx="6" fill="#ffb715" opacity="0.12"/>
+              <rect x="6"  y="4"  width="60" height="11" rx="6" fill="#ffb715"/>
+              <rect x="6"  y="12" width="60" height="3"  fill="#ffb715"/>
+              <rect x="14" y="24" width="22" height="4"  rx="2" fill="#ffb715" opacity="0.7"/>
+              <rect x="14" y="32" width="36" height="4"  rx="2" fill="#ffb715" opacity="0.4"/>
+              <rect x="14" y="40" width="14" height="4"  rx="2" fill="#ffb715" opacity="0.3"/>
+            </svg>
+            <h3 class="font-display font-extrabold text-bg text-2xl tracking-[-0.03em] leading-tight mb-4">UI/UX Design</h3>
+            <p class="font-body font-light text-lg leading-[1.7] text-[#7a7060]">Our process focuses on distilling complex ideas into easy-to-understand diagrams, wireframes, and final products — user-centered and function-focused designs every time.</p>
+          </div>
+          <div class="mt-4 inline-flex items-center gap-2 text-[#c49a00] font-display font-semibold text-sm group-hover:gap-3 transition-all duration-200">
+            Learn more
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <!-- 04 Design Implementation — dark wide card with pixel texture -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-4 bg-[#242423] rounded-2xl p-10 flex flex-col justify-between group cursor-pointer hover:bg-[#2a2a28] transition-colors duration-300 relative overflow-hidden" style="min-height: 360px;">
+          <!-- Cyan pixel dot pattern bleeds from right -->
+          <div class="absolute right-0 top-0 bottom-0 w-56 opacity-20 pointer-events-none">
+            <svg width="100%" height="100%" viewBox="0 0 200 360" fill="none" preserveAspectRatio="xMaxYMid slice">
+              <circle cx="20"  cy="24"  r="5" fill="#5bc1e1" opacity="0.9"/>
+              <circle cx="46"  cy="24"  r="5" fill="#5bc1e1" opacity="0.78"/>
+              <circle cx="72"  cy="24"  r="5" fill="#5bc1e1" opacity="0.66"/>
+              <circle cx="98"  cy="24"  r="5" fill="#5bc1e1" opacity="0.54"/>
+              <circle cx="124" cy="24"  r="5" fill="#5bc1e1" opacity="0.42"/>
+              <circle cx="150" cy="24"  r="5" fill="#5bc1e1" opacity="0.30"/>
+              <circle cx="176" cy="24"  r="5" fill="#5bc1e1" opacity="0.18"/>
+              <circle cx="20"  cy="60"  r="5" fill="#5bc1e1" opacity="0.9"/>
+              <circle cx="46"  cy="60"  r="5" fill="#5bc1e1" opacity="0.78"/>
+              <circle cx="72"  cy="60"  r="5" fill="#5bc1e1" opacity="0.66"/>
+              <circle cx="98"  cy="60"  r="5" fill="#5bc1e1" opacity="0.54"/>
+              <circle cx="124" cy="60"  r="5" fill="#5bc1e1" opacity="0.42"/>
+              <circle cx="150" cy="60"  r="5" fill="#5bc1e1" opacity="0.30"/>
+              <circle cx="176" cy="60"  r="5" fill="#5bc1e1" opacity="0.18"/>
+              <circle cx="20"  cy="96"  r="5" fill="#5bc1e1" opacity="0.9"/>
+              <circle cx="46"  cy="96"  r="5" fill="#5bc1e1" opacity="0.78"/>
+              <circle cx="72"  cy="96"  r="5" fill="#5bc1e1" opacity="0.66"/>
+              <circle cx="98"  cy="96"  r="5" fill="#5bc1e1" opacity="0.54"/>
+              <circle cx="124" cy="96"  r="5" fill="#5bc1e1" opacity="0.42"/>
+              <circle cx="150" cy="96"  r="5" fill="#5bc1e1" opacity="0.30"/>
+              <circle cx="176" cy="96"  r="5" fill="#5bc1e1" opacity="0.18"/>
+              <circle cx="20"  cy="132" r="5" fill="#5bc1e1" opacity="0.9"/>
+              <circle cx="46"  cy="132" r="5" fill="#5bc1e1" opacity="0.78"/>
+              <circle cx="72"  cy="132" r="5" fill="#5bc1e1" opacity="0.66"/>
+              <circle cx="98"  cy="132" r="5" fill="#5bc1e1" opacity="0.54"/>
+              <circle cx="124" cy="132" r="5" fill="#5bc1e1" opacity="0.42"/>
+              <circle cx="150" cy="132" r="5" fill="#5bc1e1" opacity="0.30"/>
+              <circle cx="176" cy="132" r="5" fill="#5bc1e1" opacity="0.18"/>
+              <circle cx="20"  cy="168" r="5" fill="#5bc1e1" opacity="0.9"/>
+              <circle cx="46"  cy="168" r="5" fill="#5bc1e1" opacity="0.78"/>
+              <circle cx="72"  cy="168" r="5" fill="#5bc1e1" opacity="0.66"/>
+              <circle cx="98"  cy="168" r="5" fill="#5bc1e1" opacity="0.54"/>
+              <circle cx="124" cy="168" r="5" fill="#5bc1e1" opacity="0.42"/>
+              <circle cx="150" cy="168" r="5" fill="#5bc1e1" opacity="0.30"/>
+              <circle cx="176" cy="168" r="5" fill="#5bc1e1" opacity="0.18"/>
+              <circle cx="20"  cy="204" r="5" fill="#5bc1e1" opacity="0.9"/>
+              <circle cx="46"  cy="204" r="5" fill="#5bc1e1" opacity="0.78"/>
+              <circle cx="72"  cy="204" r="5" fill="#5bc1e1" opacity="0.66"/>
+              <circle cx="98"  cy="204" r="5" fill="#5bc1e1" opacity="0.54"/>
+              <circle cx="124" cy="204" r="5" fill="#5bc1e1" opacity="0.42"/>
+              <circle cx="150" cy="204" r="5" fill="#5bc1e1" opacity="0.30"/>
+              <circle cx="176" cy="204" r="5" fill="#5bc1e1" opacity="0.18"/>
+              <circle cx="20"  cy="240" r="5" fill="#5bc1e1" opacity="0.9"/>
+              <circle cx="46"  cy="240" r="5" fill="#5bc1e1" opacity="0.78"/>
+              <circle cx="72"  cy="240" r="5" fill="#5bc1e1" opacity="0.66"/>
+              <circle cx="98"  cy="240" r="5" fill="#5bc1e1" opacity="0.54"/>
+              <circle cx="124" cy="240" r="5" fill="#5bc1e1" opacity="0.42"/>
+              <circle cx="150" cy="240" r="5" fill="#5bc1e1" opacity="0.30"/>
+              <circle cx="176" cy="240" r="5" fill="#5bc1e1" opacity="0.18"/>
+              <circle cx="20"  cy="276" r="5" fill="#5bc1e1" opacity="0.9"/>
+              <circle cx="46"  cy="276" r="5" fill="#5bc1e1" opacity="0.78"/>
+              <circle cx="72"  cy="276" r="5" fill="#5bc1e1" opacity="0.66"/>
+              <circle cx="98"  cy="276" r="5" fill="#5bc1e1" opacity="0.54"/>
+              <circle cx="124" cy="276" r="5" fill="#5bc1e1" opacity="0.42"/>
+              <circle cx="150" cy="276" r="5" fill="#5bc1e1" opacity="0.30"/>
+              <circle cx="176" cy="276" r="5" fill="#5bc1e1" opacity="0.18"/>
+              <circle cx="20"  cy="312" r="5" fill="#5bc1e1" opacity="0.9"/>
+              <circle cx="46"  cy="312" r="5" fill="#5bc1e1" opacity="0.78"/>
+              <circle cx="72"  cy="312" r="5" fill="#5bc1e1" opacity="0.66"/>
+              <circle cx="98"  cy="312" r="5" fill="#5bc1e1" opacity="0.54"/>
+              <circle cx="124" cy="312" r="5" fill="#5bc1e1" opacity="0.42"/>
+              <circle cx="150" cy="312" r="5" fill="#5bc1e1" opacity="0.30"/>
+              <circle cx="176" cy="312" r="5" fill="#5bc1e1" opacity="0.18"/>
+            </svg>
+          </div>
+          <div class="relative">
+            <span class="font-mono text-xs tracking-[0.1em] text-cyan/60 block mb-5">04</span>
+            <h3 class="font-display font-extrabold text-cream leading-none tracking-[-0.03em] mb-5" style="font-size: clamp(1.8rem, 3vw, 2.5rem)">Design<br/>Implementation</h3>
+            <p class="font-body font-light text-lg leading-[1.7] text-[#8a8580] max-w-sm">Ideation and iteration are the foundation of our design lifecycle. From wireframing to delivery, we design every screen from login to logout — matching each button, paragraph, and icon down to the pixel.</p>
+          </div>
+          <div class="relative flex items-center gap-3 mt-4">
+            <div class="h-px flex-1 bg-white/8"></div>
+            <span class="font-mono text-xs text-cyan/40 tracking-wider">PIXEL PERFECT</span>
+          </div>
+        </div>
+
+        <!-- ─── ROW 3 ─────────────────────────────────────────── -->
+
+        <!-- 05 Mobile App Development — full orange, energetic -->
+        <div class="col-span-1 md:col-span-1 lg:col-span-3 rounded-2xl p-10 flex flex-col justify-between group cursor-pointer transition-all duration-300 relative overflow-hidden" style="background: #ff8a3b; min-height: 320px;">
+          <!-- Darker orange vignette -->
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(0,0,0,0.06);"></div>
+          <div class="relative flex justify-between items-start">
+            <span class="font-mono text-xs tracking-[0.1em] text-[#242423]/50">05</span>
+            <!-- Large phone illustration -->
+            <svg width="72" height="80" viewBox="0 0 72 80" fill="none" class="opacity-30 group-hover:opacity-50 transition-opacity duration-300">
+              <rect x="30" y="4"  width="32" height="52" rx="8" fill="#242423"/>
+              <rect x="34" y="10" width="24" height="36" rx="4" fill="#242423" opacity="0.5"/>
+              <rect x="8"  y="14" width="32" height="52" rx="8" fill="#242423"/>
+              <rect x="12" y="20" width="24" height="36" rx="4" fill="white" opacity="0.1"/>
+              <circle cx="24" cy="60" r="3" fill="white" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="relative">
+            <h3 class="font-display font-extrabold text-[#242423] leading-none tracking-[-0.04em] mb-4" style="font-size: clamp(1.8rem, 3vw, 2.5rem)">Mobile App<br/>Development</h3>
+            <p class="font-body font-light text-lg leading-[1.7] text-[#242423]/65">We use the Google Flutter framework, which provides a clean, modern way of building mobile applications with an extensive library of components to layout each page.</p>
+          </div>
+        </div>
+
+        <!-- 06 Project Management — clean white card -->
+        <div class="col-span-1 md:col-span-1 lg:col-span-3 bg-white rounded-2xl p-10 flex flex-col justify-between group cursor-pointer hover:bg-[#fdfcf8] transition-colors duration-300 relative overflow-hidden" style="min-height: 320px;">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-teal opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl"></div>
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <span class="font-mono text-xs tracking-[0.1em] text-[#bbb]">06</span>
+              <!-- Kanban illustration, prominent -->
+              <svg width="80" height="64" viewBox="0 0 80 56" fill="none">
+                <rect x="2"  y="2"  width="20" height="8" rx="3" fill="#38c1ad"/>
+                <rect x="2"  y="13" width="20" height="8" rx="3" fill="#38c1ad" opacity="0.55"/>
+                <rect x="2"  y="24" width="20" height="8" rx="3" fill="#38c1ad" opacity="0.25"/>
+                <rect x="30" y="2"  width="20" height="8" rx="3" fill="#38c1ad"/>
+                <rect x="30" y="13" width="20" height="8" rx="3" fill="#38c1ad" opacity="0.55"/>
+                <rect x="58" y="2"  width="20" height="8" rx="3" fill="#38c1ad"/>
+                <rect x="58" y="13" width="20" height="8" rx="3" fill="#38c1ad" opacity="0.55"/>
+                <rect x="58" y="24" width="20" height="8" rx="3" fill="#38c1ad" opacity="0.25"/>
+                <rect x="58" y="35" width="20" height="8" rx="3" fill="#38c1ad" opacity="0.12"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-extrabold text-bg text-2xl tracking-[-0.03em] leading-tight mb-4">Project Management</h3>
+            <p class="font-body font-light text-lg leading-[1.7] text-[#6b6860]">We work directly with clients to translate their ideas into actionable tasks for our development team. Your project manager is your partner and will provide input and guidance every step of the way.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-black/6 flex items-center justify-between">
+            <span class="font-mono text-xs text-[#aaa] tracking-wider">BI-WEEKLY DEMOS</span>
+            <div class="w-2 h-2 rounded-full bg-teal"></div>
+          </div>
+        </div>
+
+        <!-- ─── ROW 4 ─────────────────────────────────────────── -->
+
+        <!-- 07 Code Audits — full-width dark featured -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-6 rounded-2xl overflow-hidden group cursor-pointer relative" style="background: #18181600; min-height: 200px;">
+          <div class="absolute inset-0 rounded-2xl" style="background: linear-gradient(135deg, #1a1a16 0%, #242423 50%, #1e2b28 100%);"></div>
+          <!-- Decorative large brackets in background -->
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
+            <svg width="400" height="200" viewBox="0 0 400 200" fill="none">
+              <path d="M80 20 L40 100 L80 180" stroke="#ffb715" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M140 60 L120 140" stroke="#ffb715" stroke-width="8" stroke-linecap="round"/>
+              <path d="M180 20 L220 100 L180 180" stroke="#ffb715" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="300" cy="80" r="50" stroke="#ffb715" stroke-width="8"/>
+              <line x1="338" y1="118" x2="368" y2="150" stroke="#ffb715" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="relative flex items-center justify-between px-12 py-10 gap-16">
+            <!-- Left: text -->
+            <div class="flex items-start gap-8">
+              <span class="font-mono text-xs tracking-[0.1em] text-yellow/50 pt-1 shrink-0">07</span>
+              <div>
+                <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none mb-4" style="font-size: clamp(1.8rem, 3vw, 2.5rem)">Code Audits</h3>
+                <p class="font-body font-light text-lg leading-[1.7] text-[#8a8580] max-w-2xl">Whether bringing a legacy application or just looking for a review of a new platform, we'll give a thoughtful, thorough code audit of both the backend and frontend and set you up for success in the next decade and beyond.</p>
+              </div>
+            </div>
+            <!-- Right: illustration + CTA -->
+            <div class="shrink-0 flex flex-col items-center gap-6">
+              <svg width="90" height="80" viewBox="0 0 80 72" fill="none" class="opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                <path d="M18 28 L8 36 L18 44"  stroke="#ffb715" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M30 20 L24 52"         stroke="#ffb715" stroke-width="3" stroke-linecap="round"/>
+                <path d="M42 28 L52 36 L42 44" stroke="#ffb715" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="62" cy="22" r="13" fill="#ffb715" opacity="0.1"/>
+                <circle cx="62" cy="22" r="13" stroke="#ffb715" stroke-width="2.5"/>
+                <line  x1="71" y1="32" x2="78" y2="41" stroke="#ffb715" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-yellow text-bg font-display font-bold text-sm rounded-full no-underline hover:bg-[#e6a500] transition-colors duration-200 whitespace-nowrap">
+                Request an audit
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO ENGAGE -->
+  <section id="engage" class="py-28 bg-bg">
+    <div class="max-w-[1280px] mx-auto px-10">
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+        <div>
+          <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-4">02 — How to engage</p>
+          <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
+            Ways to<br /><em class="italic text-accent">work together</em>
+          </h2>
+        </div>
+        <p class="font-body font-light text-lg text-muted max-w-sm leading-relaxed lg:text-right">
+          We offer flexible engagement models designed around how your team actually works.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <!-- Fixed Project Delivery -->
+        <div class="group relative rounded-2xl overflow-hidden cursor-pointer" style="background: #f7f4e4;">
+          <div class="absolute top-0 left-0 bottom-0 w-1 bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="p-10 flex flex-col h-full min-h-[400px]">
+            <div class="flex items-start justify-between mb-8">
+              <span class="font-display font-extrabold leading-none tracking-[-0.04em] text-accent" style="font-size: 5rem; line-height: 1;">01</span>
+              <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-[#6b6860] group-hover:bg-accent group-hover:border-accent group-hover:text-bg transition-all duration-300 mt-2">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <h3 class="font-display font-extrabold text-bg text-2xl tracking-[-0.03em] leading-tight mb-4">Fixed Project<br/>Delivery</h3>
+            <p class="font-body font-light text-lg leading-[1.7] text-[#6b6860] flex-1">You have a defined scope. We estimate it, own it, and deliver it — on time, on budget, with a clear handoff.</p>
+            <ul class="mt-6 flex flex-col gap-2 border-t border-black/8 pt-6">
+              {['Fixed scope & timeline', 'Milestone-based billing', 'Full ownership of delivery'].map(f => (
+                <li class="flex items-center gap-2 font-body text-base text-[#6b6860]">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Monthly Retainer -->
+        <div class="group relative rounded-2xl overflow-hidden cursor-pointer" style="background: #242423;">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-teal opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <!-- Glow -->
+          <div class="absolute bottom-0 left-0 right-0 h-48 pointer-events-none" style="background: radial-gradient(ellipse at 50% 100%, rgba(56,193,173,0.08) 0%, transparent 70%);"></div>
+          <div class="relative p-10 flex flex-col h-full min-h-[400px]">
+            <div class="flex items-start justify-between mb-8">
+              <span class="font-display font-extrabold leading-none tracking-[-0.04em]" style="font-size: 5rem; line-height: 1; color: rgba(56,193,173,0.25);">02</span>
+              <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-muted group-hover:bg-teal group-hover:border-teal group-hover:text-bg transition-all duration-300 mt-2">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <h3 class="font-display font-extrabold text-cream text-2xl tracking-[-0.03em] leading-tight mb-4">Monthly<br/>Retainer</h3>
+            <p class="font-body font-light text-lg leading-[1.7] text-muted flex-1">Ongoing monthly capacity with priority access. No project overhead — just a dedicated team moving fast on whatever matters most.</p>
+            <ul class="mt-6 flex flex-col gap-2 border-t border-white/8 pt-6">
+              {['Priority access & fast turnaround', 'Flexible task queue', 'Monthly capacity blocks'].map(f => (
+                <li class="flex items-center gap-2 font-body text-base text-muted">
+                  <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background: #38c1ad;"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Team Extension -->
+        <div class="group relative rounded-2xl overflow-hidden cursor-pointer" style="background: #ff8a3b;">
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(0,0,0,0.06);"></div>
+          <!-- Large decorative number -->
+          <div class="absolute right-4 top-2 font-display font-extrabold leading-none tracking-[-0.04em] text-[#242423]/8 select-none pointer-events-none" style="font-size: 11rem; line-height: 1;">03</div>
+          <div class="relative p-10 flex flex-col h-full min-h-[400px]">
+            <div class="flex items-start justify-between mb-8">
+              <span class="font-display font-extrabold leading-none tracking-[-0.04em] text-[#242423]/40" style="font-size: 5rem; line-height: 1;">03</span>
+              <div class="w-10 h-10 rounded-full border border-[#242423]/20 flex items-center justify-center text-[#242423]/50 group-hover:bg-[#242423] group-hover:border-[#242423] group-hover:text-accent transition-all duration-300 mt-2">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <h3 class="font-display font-extrabold text-[#242423] text-2xl tracking-[-0.03em] leading-tight mb-4">Team<br/>Extension</h3>
+            <p class="font-body font-light text-lg leading-[1.7] text-[#242423]/70 flex-1">Our engineers join your team. Same standup, same tools, same sprint — just a different payroll. Embed one or a whole squad.</p>
+            <ul class="mt-6 flex flex-col gap-2 border-t border-[#242423]/15 pt-6">
+              {['Embedded in your workflow', 'Your stack, your pace', 'Scale up or down anytime'].map(f => (
+                <li class="flex items-center gap-2 font-body text-base text-[#242423]/65">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#242423]/40 shrink-0"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="mt-10 flex items-center justify-between flex-wrap gap-4 px-8 py-6 rounded-2xl border border-white/8">
+        <p class="font-body font-light text-lg text-muted">Not sure which model fits? We'll spec out a custom engagement for you.</p>
+        <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-bg font-display font-bold text-base rounded-full no-underline transition-all duration-200 shadow-[0_2px_16px_rgba(255,138,59,0.25)] hover:shadow-[0_6px_24px_rgba(255,138,59,0.35)] hover:-translate-y-px whitespace-nowrap">
+          Schedule a call
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="py-28 bg-bg2">
+    <div class="max-w-[1280px] mx-auto px-10">
+      <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-3">03 — Selected work</p>
+      <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-none mb-16" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
+        Products we've<br /><em class="italic text-accent">shipped</em>
+      </h2>
+
+      <div class="flex flex-col divide-y divide-white/8 border-y border-white/8">
+        <!-- Item 01 -->
+        <a href="#" class="group grid grid-cols-2 items-center gap-20 py-16 no-underline text-inherit hover:opacity-85 transition-opacity duration-200">
+          <div class="flex gap-8 items-start">
+            <span class="font-mono text-xs tracking-[0.1em] text-dim pt-1 shrink-0">01</span>
+            <div class="flex flex-col gap-2">
+              <span class="font-mono text-xs tracking-[0.12em] uppercase text-accent">Fintech · SaaS</span>
+              <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem)">Meridian Finance</h3>
+              <p class="font-body font-light text-base leading-[1.7] text-muted max-w-xs mt-1">Real-time portfolio analytics platform processing $2B in daily transactions across 18 markets.</p>
+            </div>
+          </div>
+          <div class="relative rounded-xl overflow-hidden border border-white/8 aspect-[16/10]">
+            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Meridian Finance" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-all duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent"></div>
+          </div>
+        </a>
+
+        <!-- Item 02 -->
+        <a href="#" class="group grid grid-cols-2 items-center gap-20 py-16 no-underline text-inherit hover:opacity-85 transition-opacity duration-200">
+          <div class="relative rounded-xl overflow-hidden border border-white/8 aspect-[16/10]">
+            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Pulse Health OS" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-all duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-br from-teal/5 to-transparent"></div>
+          </div>
+          <div class="flex gap-8 items-start">
+            <span class="font-mono text-xs tracking-[0.1em] text-dim pt-1 shrink-0">02</span>
+            <div class="flex flex-col gap-2">
+              <span class="font-mono text-xs tracking-[0.12em] uppercase text-accent">Healthcare · Platform</span>
+              <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem)">Pulse Health OS</h3>
+              <p class="font-body font-light text-base leading-[1.7] text-muted max-w-xs mt-1">Patient management system serving 300+ clinics and 2M+ patient records across 12 countries.</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Item 03 -->
+        <a href="#" class="group grid grid-cols-2 items-center gap-20 py-16 no-underline text-inherit hover:opacity-85 transition-opacity duration-200">
+          <div class="flex gap-8 items-start">
+            <span class="font-mono text-xs tracking-[0.1em] text-dim pt-1 shrink-0">03</span>
+            <div class="flex flex-col gap-2">
+              <span class="font-mono text-xs tracking-[0.12em] uppercase text-accent">E-commerce · Infrastructure</span>
+              <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem)">Volta Commerce</h3>
+              <p class="font-body font-light text-base leading-[1.7] text-muted max-w-xs mt-1">Headless commerce engine handling 40K concurrent users at peak. Zero downtime since launch.</p>
+            </div>
+          </div>
+          <div class="relative rounded-xl overflow-hidden border border-white/8 aspect-[16/10]">
+            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Volta Commerce" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-all duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-br from-yellow/5 to-transparent"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="py-28 bg-latte">
+    <div class="max-w-[1280px] mx-auto px-10">
+      <p class="font-mono text-xs tracking-[0.12em] uppercase text-[#8a8068] mb-3">04 — How we work</p>
+      <h2 class="font-display font-extrabold text-bg tracking-[-0.04em] leading-none mb-16" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
+        A process built<br /><em class="italic text-accent">for clarity</em>
+      </h2>
+
+      <div class="grid grid-cols-4 gap-px bg-black/10 border border-black/10 rounded-xl overflow-hidden">
+        {[
+          { num: '01', title: 'Discovery',        body: 'We start by deeply understanding your goals, constraints, and users. No assumptions. Clarity before code.' },
+          { num: '02', title: 'Architecture',     body: 'The right system design for your specific problem — not the trendy one. Decisions made early save months later.' },
+          { num: '03', title: 'Build',            body: 'Bi-weekly demos, continuous deployment, always-on communication. You steer at every step.' },
+          { num: '04', title: 'Launch & Beyond',  body: "We don't disappear after go-live. Monitoring, post-launch support, ongoing partnership — your terms." },
+        ].map(s => (
+          <div class="bg-white hover:bg-[#fdfcf8] transition-colors duration-200 p-10 flex flex-col gap-4">
+            <span class="font-mono text-xs tracking-[0.1em] text-accent">{s.num}</span>
+            <h3 class="font-display font-bold text-bg text-xl tracking-[-0.02em]">{s.title}</h3>
+            <p class="font-body font-light text-lg leading-[1.7] text-[#6b6860]">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section id="stack" class="py-28 bg-bg2 overflow-hidden relative">
+    <!-- Subtle ambient glow -->
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 50% 60% at 80% 50%, rgba(91,193,225,0.03) 0%, transparent 70%);"></div>
+
+    <div class="max-w-[1280px] mx-auto px-10">
+
+      <!-- Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+        <div>
+          <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-4">05 — Tech stack</p>
+          <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
+            Built on<br /><em class="italic text-accent">proven tools</em>
+          </h2>
+        </div>
+        <p class="font-body font-light text-lg text-muted max-w-sm leading-relaxed lg:text-right">
+          We don't chase trends. Every tool in our stack earns its place through performance, longevity, and real-world reliability.
+        </p>
+      </div>
+
+      <!-- Category grid: gap-px trick for seamless 1px borders -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
+
+        <!-- Frontend -->
+        <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
+          <div class="flex flex-col gap-2.5">
+            <div class="w-5 h-1 rounded-full bg-cyan"></div>
+            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Frontend</span>
+          </div>
+          <ul class="flex flex-col gap-2">
+            {['React', 'Next.js', 'Vue.js', 'Nuxt.js', 'TypeScript', 'Tailwind CSS'].map(t => (
+              <li class="font-body text-base text-muted group-hover:text-cream/70 transition-colors duration-300">{t}</li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Backend -->
+        <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
+          <div class="flex flex-col gap-2.5">
+            <div class="w-5 h-1 rounded-full bg-teal"></div>
+            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Backend</span>
+          </div>
+          <ul class="flex flex-col gap-2">
+            {['Node.js', 'Laravel', 'Express.js', 'Python', 'GraphQL', 'REST APIs'].map(t => (
+              <li class="font-body text-base text-muted group-hover:text-cream/70 transition-colors duration-300">{t}</li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Mobile -->
+        <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
+          <div class="flex flex-col gap-2.5">
+            <div class="w-5 h-1 rounded-full bg-accent"></div>
+            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Mobile</span>
+          </div>
+          <ul class="flex flex-col gap-2">
+            {['Flutter', 'React Native', 'iOS', 'Android'].map(t => (
+              <li class="font-body text-base text-muted group-hover:text-cream/70 transition-colors duration-300">{t}</li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Database -->
+        <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
+          <div class="flex flex-col gap-2.5">
+            <div class="w-5 h-1 rounded-full bg-yellow"></div>
+            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Database</span>
+          </div>
+          <ul class="flex flex-col gap-2">
+            {['PostgreSQL', 'MySQL', 'Redis', 'MongoDB', 'Supabase'].map(t => (
+              <li class="font-body text-base text-muted group-hover:text-cream/70 transition-colors duration-300">{t}</li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Cloud & Infra -->
+        <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
+          <div class="flex flex-col gap-2.5">
+            <div class="w-5 h-1 rounded-full bg-white/30"></div>
+            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Cloud & Infra</span>
+          </div>
+          <ul class="flex flex-col gap-2">
+            {['AWS', 'GCP', 'Docker', 'Kubernetes', 'Vercel', 'CI/CD'].map(t => (
+              <li class="font-body text-base text-muted group-hover:text-cream/70 transition-colors duration-300">{t}</li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Design -->
+        <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
+          <div class="flex flex-col gap-2.5">
+            <div class="w-5 h-1 rounded-full" style="background: #b97bde;"></div>
+            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Design</span>
+          </div>
+          <ul class="flex flex-col gap-2">
+            {['Figma', 'Adobe XD', 'Storybook', 'Framer', 'Illustrator'].map(t => (
+              <li class="font-body text-base text-muted group-hover:text-cream/70 transition-colors duration-300">{t}</li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scrolling marquee strip -->
+    <div class="mt-16 relative">
+      <!-- Fade masks on edges -->
+      <div class="absolute inset-y-0 left-0 w-32 z-10 pointer-events-none" style="background: linear-gradient(to right, #1e1e1d, transparent);"></div>
+      <div class="absolute inset-y-0 right-0 w-32 z-10 pointer-events-none" style="background: linear-gradient(to left, #1e1e1d, transparent);"></div>
+      <div class="flex overflow-hidden">
+        {[0, 1].map(() => (
+          <div class="flex items-center shrink-0 animate-[marquee_35s_linear_infinite]" aria-hidden="true">
+            {['React', 'Next.js', 'Vue.js', 'TypeScript', 'Node.js', 'Laravel', 'Flutter', 'PostgreSQL', 'Redis', 'AWS', 'Docker', 'Figma', 'GraphQL', 'Kubernetes', 'Supabase', 'Tailwind CSS', 'Python', 'MongoDB'].map(t => (
+              <span class="font-mono text-sm text-dim tracking-[0.06em] whitespace-nowrap">
+                {t}<span class="mx-8 text-white/8">·</span>
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-0 bg-bg">
+    <div class="relative max-w-[700px] mx-auto px-10 py-36 text-center overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse,rgba(255,138,59,0.07)_0%,transparent_70%)] pointer-events-none"></div>
+      <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-8">Get in touch</p>
+      <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-[0.95] mb-6" style="font-size: clamp(3rem, 7vw, 6.5rem)">
+        Let's build<br /><em class="italic text-accent">something great</em>
+      </h2>
+      <p class="font-body font-light text-lg leading-[1.7] text-muted mb-10">Tell us about your project. We'll respond within 24 hours.</p>
+      <a href="mailto:hello@syntanic.com" class="inline-flex items-center gap-2 px-9 py-4 bg-accent hover:bg-accent-dark text-bg font-display font-bold text-lg rounded-full transition-all duration-200 no-underline shadow-[0_2px_16px_rgba(255,138,59,0.25)] hover:shadow-[0_6px_24px_rgba(255,138,59,0.35)] hover:-translate-y-px active:translate-y-0">
+        hello@syntanic.com
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
 </Layout>
+
+<style>
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+@media (max-width: 1100px) {
+    .grid.grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .grid.grid-cols-3 { grid-template-columns: repeat(1, 1fr); }
+    .grid.grid-cols-4 { grid-template-columns: repeat(1, 1fr); }
+    .col-span-3 { grid-column: span 1; flex-direction: column; gap: 1rem; }
+    .grid.grid-cols-2 { grid-template-columns: repeat(1, 1fr); }
+  }
+</style>
+

@@ -1,27 +1,79 @@
 ---
 import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Syntanic — Software Development Agency', description = 'We build software that lasts. Full-stack development, product engineering, and digital transformation.' } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700;1,800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav id="nav" class="fixed top-0 left-0 right-0 z-50 py-5 border-b border-transparent transition-colors duration-300 data-[scrolled]:bg-[rgba(36,36,35,0.94)] data-[scrolled]:backdrop-blur-[16px] data-[scrolled]:border-b-white/8">
+      <div class="max-w-[1280px] mx-auto px-10 flex items-center justify-between gap-8">
+        <a href="/" class="flex items-center gap-2 no-underline text-cream font-display font-bold text-base tracking-tight">
+          <span class="inline-flex items-center justify-center w-7 h-7 bg-accent text-bg font-display font-extrabold text-sm rounded-md leading-none">S</span>
+          Syntanic
+        </a>
+        <ul class="hidden md:flex list-none gap-10">
+          <li><a href="/about" class="text-muted hover:text-cream font-display font-medium text-base transition-colors duration-200 no-underline">About</a></li>
+          <li><a href="/#work" class="text-muted hover:text-cream font-display font-medium text-base transition-colors duration-200 no-underline">Work</a></li>
+        </ul>
+        <a href="/contact" class="inline-flex items-center px-5 py-2 bg-accent hover:bg-accent-dark text-bg font-display font-bold text-xs rounded-full transition-colors duration-200 no-underline shadow-[0_2px_12px_rgba(255,138,59,0.25)] hover:shadow-[0_4px_20px_rgba(255,138,59,0.35)] hover:-translate-y-px active:translate-y-0">
+          Contact us
+        </a>
+      </div>
+    </nav>
+
+    <slot />
+
+    <!-- FOOTER -->
+    <footer class="bg-bg2 border-t border-white/8">
+      <div class="max-w-[1280px] mx-auto px-10 py-14 flex flex-col gap-10">
+
+        <!-- Logo + copyright -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <a href="/" class="flex items-center gap-2.5 no-underline text-cream font-display font-bold text-lg tracking-tight">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-accent text-bg font-extrabold text-sm rounded-md leading-none">S</span>
+            Syntanic
+          </a>
+          <span class="font-mono text-xs text-dim tracking-[0.04em]">© 2025 Syntanic. All rights reserved.</span>
+        </div>
+
+      </div>
+    </footer>
+
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+  }
 </style>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav?.toggleAttribute('data-scrolled', window.scrollY > 60);
+  }, { passive: true });
+</script>

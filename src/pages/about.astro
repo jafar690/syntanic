@@ -1,0 +1,362 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About — Syntanic" description="We are Syntanic. A software development agency built on craft, clarity, and genuine ownership of the products we build.">
+
+  <!-- HERO -->
+  <section class="relative min-h-svh bg-bg flex items-center overflow-hidden pt-24">
+    <!-- Blueprint grid texture -->
+    <div class="absolute inset-0 opacity-[0.018]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 72px 72px;"></div>
+    <!-- Glows -->
+    <div class="absolute top-0 left-0 w-[600px] h-[600px] pointer-events-none" style="background: radial-gradient(ellipse at 0% 0%, rgba(255,138,59,0.055) 0%, transparent 65%);"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] pointer-events-none" style="background: radial-gradient(ellipse at 100% 100%, rgba(56,193,173,0.04) 0%, transparent 65%);"></div>
+
+    <div class="max-w-[1280px] w-full mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-20">
+
+      <!-- Left: text -->
+      <div>
+        <div class="inline-flex items-center gap-2 font-mono text-xs tracking-[0.1em] uppercase text-accent mb-10 opacity-0 [animation:fadeUp_0.5s_ease_0.1s_forwards]">
+          <span class="w-1.5 h-1.5 bg-accent rounded-full [animation:blink_2s_ease-in-out_infinite]"></span>
+          About us
+        </div>
+
+        <h1 class="font-display font-extrabold tracking-[-0.04em] text-cream leading-[0.92] mb-10 opacity-0 [animation:fadeUp_0.7s_cubic-bezier(0.22,1,0.36,1)_0.2s_forwards]"
+            style="font-size: clamp(3rem, 5.5vw, 5.5rem);">
+          We are not<br/>your <em class="italic text-accent">typical</em><br/>agency.
+        </h1>
+
+        <p class="font-body font-light text-lg leading-[1.8] text-muted max-w-[480px] mb-10 opacity-0 [animation:fadeUp_0.6s_ease_0.45s_forwards]">
+          Founded in 2018, Syntanic is a software development agency built on a single belief: the best software happens when engineers think like product owners. We help startups and scale-ups ship ambitious digital products — on time, on budget, built to last.
+        </p>
+
+        <div class="flex items-center gap-6 flex-wrap opacity-0 [animation:fadeUp_0.6s_ease_0.65s_forwards]">
+          <a href="/contact" class="inline-flex items-center gap-2 px-7 py-3.5 bg-accent hover:bg-accent-dark text-bg font-display font-bold text-base rounded-full no-underline transition-colors duration-200 shadow-[0_2px_16px_rgba(255,138,59,0.25)] hover:shadow-[0_6px_24px_rgba(255,138,59,0.35)] hover:-translate-y-px active:translate-y-0">
+            Start a project
+          </a>
+          <a href="#team" class="font-display font-medium text-base text-muted hover:text-cream transition-colors duration-200 no-underline">
+            Meet the team ↓
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: system architecture SVG -->
+      <div class="relative flex items-center justify-center opacity-0 [animation:fadeUp_0.9s_ease_0.35s_forwards] hidden lg:flex">
+        <svg viewBox="0 0 560 500" fill="none" class="w-full max-w-[540px]">
+          <defs>
+            <pattern id="grid-dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <circle cx="20" cy="20" r="0.8" fill="#ffffff" opacity="0.07"/>
+            </pattern>
+          </defs>
+          <rect width="560" height="500" fill="url(#grid-dots)"/>
+
+          <!-- Outer decorative rings -->
+          <circle cx="280" cy="250" r="200" stroke="#ffffff" stroke-width="0.5" opacity="0.03"/>
+          <circle cx="280" cy="250" r="155" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+          <circle cx="280" cy="250" r="110" stroke="#ff8a3b" stroke-width="0.8" opacity="0.08" stroke-dasharray="3 8"/>
+
+          <!-- Connection lines (dashed) -->
+          <line x1="280" y1="250" x2="130" y2="110" stroke="#5bc1e1" stroke-width="1" opacity="0.22" stroke-dasharray="5 7"/>
+          <line x1="280" y1="250" x2="430" y2="110" stroke="#38c1ad" stroke-width="1" opacity="0.22" stroke-dasharray="5 7"/>
+          <line x1="280" y1="250" x2="86"  y2="290" stroke="#5bc1e1" stroke-width="1" opacity="0.18" stroke-dasharray="5 7"/>
+          <line x1="280" y1="250" x2="474" y2="290" stroke="#ffb715" stroke-width="1" opacity="0.18" stroke-dasharray="5 7"/>
+          <line x1="280" y1="250" x2="280" y2="420" stroke="#f7f4e4" stroke-width="1" opacity="0.12" stroke-dasharray="5 7"/>
+          <!-- Secondary connections -->
+          <line x1="130" y1="110" x2="70"  y2="170" stroke="#5bc1e1" stroke-width="0.8" opacity="0.12"/>
+          <line x1="430" y1="110" x2="490" y2="170" stroke="#38c1ad" stroke-width="0.8" opacity="0.12"/>
+          <line x1="86"  y1="290" x2="52"  y2="380" stroke="#5bc1e1" stroke-width="0.8" opacity="0.1"/>
+          <line x1="474" y1="290" x2="508" y2="380" stroke="#ffb715" stroke-width="0.8" opacity="0.1"/>
+
+          <!-- Central hub -->
+          <circle cx="280" cy="250" r="72"  stroke="#ff8a3b" stroke-width="0.8" opacity="0.1"/>
+          <circle cx="280" cy="250" r="52"  stroke="#ff8a3b" stroke-width="1.2" opacity="0.2"/>
+          <circle cx="280" cy="250" r="32"  fill="#ff8a3b" opacity="0.07"/>
+          <circle cx="280" cy="250" r="14"  fill="#ff8a3b" opacity="0.85"/>
+          <circle cx="280" cy="250" r="14"  stroke="#ff8a3b" stroke-width="1.5" opacity="0.3"/>
+
+          <!-- Node: Frontend (top-left) -->
+          <circle cx="130" cy="110" r="38" stroke="#5bc1e1" stroke-width="1.2" opacity="0.35"/>
+          <circle cx="130" cy="110" r="24" fill="#5bc1e1" opacity="0.06"/>
+          <circle cx="130" cy="110" r="9"  fill="#5bc1e1" opacity="0.85"/>
+
+          <!-- Node: Backend (top-right) -->
+          <circle cx="430" cy="110" r="38" stroke="#38c1ad" stroke-width="1.2" opacity="0.35"/>
+          <circle cx="430" cy="110" r="24" fill="#38c1ad" opacity="0.06"/>
+          <circle cx="430" cy="110" r="9"  fill="#38c1ad" opacity="0.85"/>
+
+          <!-- Node: Mobile (left) -->
+          <circle cx="86"  cy="290" r="28" stroke="#5bc1e1" stroke-width="1.2" opacity="0.3"/>
+          <circle cx="86"  cy="290" r="16" fill="#5bc1e1" opacity="0.05"/>
+          <circle cx="86"  cy="290" r="7"  fill="#5bc1e1" opacity="0.75"/>
+
+          <!-- Node: Cloud (right) -->
+          <circle cx="474" cy="290" r="28" stroke="#ffb715" stroke-width="1.2" opacity="0.3"/>
+          <circle cx="474" cy="290" r="16" fill="#ffb715" opacity="0.05"/>
+          <circle cx="474" cy="290" r="7"  fill="#ffb715" opacity="0.75"/>
+
+          <!-- Node: Database (bottom) -->
+          <circle cx="280" cy="420" r="32" stroke="#f7f4e4" stroke-width="1" opacity="0.18"/>
+          <circle cx="280" cy="420" r="18" fill="#f7f4e4" opacity="0.04"/>
+          <circle cx="280" cy="420" r="8"  fill="#f7f4e4" opacity="0.45"/>
+
+          <!-- Leaf nodes -->
+          <circle cx="70"  cy="170" r="13" stroke="#5bc1e1" stroke-width="1" opacity="0.2"/>
+          <circle cx="70"  cy="170" r="4"  fill="#5bc1e1" opacity="0.45"/>
+          <circle cx="490" cy="170" r="13" stroke="#38c1ad" stroke-width="1" opacity="0.2"/>
+          <circle cx="490" cy="170" r="4"  fill="#38c1ad" opacity="0.45"/>
+          <circle cx="52"  cy="380" r="9"  stroke="#5bc1e1" stroke-width="1" opacity="0.15"/>
+          <circle cx="52"  cy="380" r="3"  fill="#5bc1e1" opacity="0.35"/>
+          <circle cx="508" cy="380" r="9"  stroke="#ffb715" stroke-width="1" opacity="0.15"/>
+          <circle cx="508" cy="380" r="3"  fill="#ffb715" opacity="0.35"/>
+        </svg>
+
+        <!-- Floating category badges -->
+        <div class="absolute top-[12%] left-[10%] px-3 py-1.5 rounded-lg border border-cyan/20 bg-cyan/[0.05] backdrop-blur-sm">
+          <span class="font-mono text-xs text-cyan/55 tracking-widest">FRONTEND</span>
+        </div>
+        <div class="absolute top-[12%] right-[5%] px-3 py-1.5 rounded-lg border border-teal/20 bg-teal/[0.05] backdrop-blur-sm">
+          <span class="font-mono text-xs text-teal/55 tracking-widest">BACKEND</span>
+        </div>
+        <div class="absolute top-[52%] left-[-2%] px-3 py-1.5 rounded-lg border border-cyan/20 bg-cyan/[0.05] backdrop-blur-sm">
+          <span class="font-mono text-xs text-cyan/55 tracking-widest">MOBILE</span>
+        </div>
+        <div class="absolute top-[52%] right-[-2%] px-3 py-1.5 rounded-lg border border-yellow/20 bg-yellow/[0.05] backdrop-blur-sm">
+          <span class="font-mono text-xs text-yellow/55 tracking-widest">CLOUD</span>
+        </div>
+        <div class="absolute bottom-[6%] left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-lg border border-white/8 bg-white/[0.03] backdrop-blur-sm">
+          <span class="font-mono text-xs text-muted/55 tracking-widest">DATABASE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-25">
+      <span class="font-mono text-xs tracking-widest uppercase text-muted">Scroll</span>
+      <div class="w-px h-10 bg-gradient-to-b from-muted to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="py-32 bg-latte relative overflow-hidden">
+    <div class="max-w-[1280px] mx-auto px-10">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+
+        <!-- Left: story text -->
+        <div>
+          <p class="font-mono text-xs tracking-[0.12em] uppercase text-[#8a8068] mb-6">Our story</p>
+          <h2 class="font-display font-extrabold text-bg tracking-[-0.04em] leading-none mb-10" style="font-size: clamp(2.8rem, 5vw, 4.5rem);">
+            Built to do<br /><em class="italic text-accent">one thing well</em>
+          </h2>
+          <div class="flex flex-col gap-5 font-body font-light text-lg leading-[1.8] text-[#6b6860]">
+            <p>We didn't set out to build a big agency. We set out to build software properly — which meant staying small enough to stay excellent. A senior-only team that actually cares about what it ships.</p>
+            <p>Every engineer at Syntanic has worked at the product level. They've felt the pressure of a launch, the real cost of technical debt, and the difference between code that works and code that lasts. That experience changes how you write software.</p>
+            <p>We've stayed deliberately focused. One stack, mastered deeply. One engagement model, executed with care. The result: 48 shipped projects, zero missed deadlines, and 100% client retention since day one.</p>
+          </div>
+        </div>
+
+        <!-- Right: pull quote + differentiators -->
+        <div class="flex flex-col gap-10 lg:pt-14">
+          <blockquote class="pl-8 border-l-4 border-accent">
+            <p class="font-display font-extrabold text-bg tracking-[-0.03em] leading-[1.1] italic" style="font-size: clamp(1.6rem, 2.8vw, 2.25rem);">
+              "Software built with ownership mentality is software that actually ships — and keeps running."
+            </p>
+            <footer class="mt-6 flex items-center gap-3">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent/15 font-display font-extrabold text-accent text-sm shrink-0">S</span>
+              <div>
+                <span class="font-display font-semibold text-sm text-bg block">Syntanic Founder</span>
+                <span class="font-mono text-xs text-[#8a8068] tracking-[0.05em]">Est. 2018</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <div class="flex flex-col border-t border-black/8">
+            {[
+              ['Senior-only team',  'Every project is led and built by engineers with 8+ years of experience.'],
+              ['No handoffs',       'The person who scoped your project is the one who builds it. No bait-and-switch.'],
+              ['Deep stack mastery','We go deep on one stack, not shallow on twenty. Mastery over breadth, every time.'],
+            ].map(([title, desc]) => (
+              <div class="flex gap-4 items-start py-4 border-b border-black/6">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-2.5"></span>
+                <div>
+                  <span class="font-display font-bold text-base text-bg block">{title}</span>
+                  <span class="font-body font-light text-base text-[#7a7060]">{desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-black/10 rounded-2xl overflow-hidden">
+        {[
+          { num: '48+',  label: 'Projects shipped' },
+          { num: '7yr',  label: 'In business'       },
+          { num: '100%', label: 'Client retention'  },
+          { num: '$50M+',label: 'Value delivered'   },
+        ].map(s => (
+          <div class="bg-white hover:bg-[#fdfcf8] transition-colors duration-200 p-10 flex flex-col gap-1">
+            <span class="font-display font-extrabold text-bg leading-none tracking-[-0.04em]" style="font-size: clamp(2.5rem, 5vw, 4rem);">{s.num}</span>
+            <span class="font-mono text-xs tracking-[0.1em] uppercase text-[#8a8068]">{s.label}</span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="py-32 bg-bg">
+    <div class="max-w-[1280px] mx-auto px-10">
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+        <div>
+          <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-4">What drives us</p>
+          <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem);">
+            The principles<br /><em class="italic text-accent">we build by</em>
+          </h2>
+        </div>
+        <p class="font-body font-light text-lg text-muted max-w-sm leading-relaxed lg:text-right">
+          Four values. Every decision, every line of code, every client conversation runs through them.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-3">
+
+        <!-- 01 Ownership — large latte card -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-4 rounded-2xl p-10 relative overflow-hidden group cursor-default" style="background: #f7f4e4; min-height: 300px;">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl"></div>
+          <div class="absolute right-4 bottom-0 font-display font-extrabold leading-none text-[#242423]/[0.04] select-none pointer-events-none" style="font-size: 16rem; line-height: 0.85;">01</div>
+          <div class="relative">
+            <span class="font-mono text-xs tracking-[0.1em] text-accent/50 block mb-6">01</span>
+            <h3 class="font-display font-extrabold text-bg tracking-[-0.04em] leading-none mb-5" style="font-size: clamp(2.5rem, 4vw, 3.5rem);">Ownership</h3>
+            <p class="font-body font-light text-lg leading-[1.75] text-[#6b6860] max-w-lg">We treat your product like it's ours. That means asking hard questions, pushing back on bad decisions, and caring about outcomes — not just output. No "that's not in scope" conversations.</p>
+          </div>
+        </div>
+
+        <!-- 02 Clarity — dark teal card -->
+        <div class="col-span-1 md:col-span-1 lg:col-span-2 rounded-2xl p-10 flex flex-col relative overflow-hidden group cursor-default" style="background: #0b2622; min-height: 300px;">
+          <div class="absolute bottom-0 left-0 right-0 h-44 pointer-events-none" style="background: radial-gradient(ellipse at 50% 100%, rgba(56,193,173,0.12) 0%, transparent 70%);"></div>
+          <div class="relative flex flex-col flex-1">
+            <span class="font-mono text-xs tracking-[0.1em] block mb-6" style="color: rgba(56,193,173,0.45)">02</span>
+            <h3 class="font-display font-extrabold leading-none tracking-[-0.04em] mb-5" style="font-size: 1.85rem; color: #a8e8e0;">Clarity</h3>
+            <p class="font-body font-light text-base leading-[1.8] flex-1" style="color: #5a9e98;">Complexity is the enemy. Clean code, honest docs, transparent status updates. No surprise invoices. No mystery delivery dates. You always know exactly where things stand.</p>
+          </div>
+        </div>
+
+        <!-- 03 Craft — orange card -->
+        <div class="col-span-1 md:col-span-1 lg:col-span-2 rounded-2xl p-10 flex flex-col relative overflow-hidden group cursor-default" style="background: #ff8a3b; min-height: 280px;">
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(0,0,0,0.07);"></div>
+          <!-- Decorative circle -->
+          <div class="absolute -right-8 -bottom-8 w-40 h-40 rounded-full border-2 border-[#242423]/10 pointer-events-none"></div>
+          <div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full border border-[#242423]/8 pointer-events-none"></div>
+          <div class="relative flex flex-col flex-1">
+            <span class="font-mono text-xs tracking-[0.1em] text-[#242423]/45 block mb-6">03</span>
+            <h3 class="font-display font-extrabold text-[#242423] leading-none tracking-[-0.04em] mb-5" style="font-size: 1.85rem;">Craft</h3>
+            <p class="font-body font-light text-base leading-[1.8] text-[#242423]/68 flex-1">We sweat the details users notice and the ones they don't. Performance, accessibility, edge cases — all of it matters. Good enough is never good enough.</p>
+          </div>
+        </div>
+
+        <!-- 04 Partnership — dark wide card with cyan -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-4 rounded-2xl p-10 relative overflow-hidden group cursor-default" style="background: #141e20; min-height: 280px;">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl"></div>
+          <div class="absolute bottom-0 left-0 right-0 h-48 pointer-events-none" style="background: radial-gradient(ellipse at 30% 100%, rgba(91,193,225,0.07) 0%, transparent 70%);"></div>
+          <div class="absolute right-4 bottom-0 font-display font-extrabold leading-none text-white/[0.03] select-none pointer-events-none" style="font-size: 16rem; line-height: 0.85;">04</div>
+          <div class="relative">
+            <span class="font-mono text-xs tracking-[0.1em] text-cyan/35 block mb-6">04</span>
+            <h3 class="font-display font-extrabold text-cream leading-none tracking-[-0.04em] mb-5" style="font-size: clamp(2.5rem, 4vw, 3.5rem);">Partnership</h3>
+            <p class="font-body font-light text-lg leading-[1.75] text-muted max-w-lg">We don't disappear after launch. We show up consistently, communicate proactively, and build relationships that outlast a single project. Our best clients have been with us for years.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="py-32 bg-latte">
+    <div class="max-w-[1280px] mx-auto px-10">
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+        <div>
+          <p class="font-mono text-xs tracking-[0.12em] uppercase text-[#8a8068] mb-4">The people</p>
+          <h2 class="font-display font-extrabold text-bg tracking-[-0.04em] leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem);">
+            The team<br /><em class="italic text-accent">behind the work</em>
+          </h2>
+        </div>
+        <p class="font-body font-light text-lg text-[#8a8068] max-w-xs leading-relaxed lg:text-right">
+          Small by design. Everyone you work with is senior, opinionated, and genuinely cares about what they build.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {[
+          { name: 'Alex Rivera',  role: 'Founder & CEO',       bg: '2c2c2b/3a3a39' },
+          { name: 'Priya Nair',   role: 'Head of Engineering',  bg: '2c2c2b/3a3a39' },
+          { name: 'Jordan Kim',   role: 'Lead Designer',        bg: '2c2c2b/3a3a39' },
+          { name: 'Sam Torres',   role: 'Product Lead',         bg: '2c2c2b/3a3a39' },
+        ].map((m, i) => (
+          <div class="group flex flex-col gap-4">
+            <div class="relative rounded-2xl overflow-hidden" style="aspect-ratio: 4/5;">
+              <img
+                src={`https://placehold.co/400x500/${m.bg}`}
+                alt={m.name}
+                class="w-full h-full object-cover transition-all duration-500 group-hover:scale-[1.04]"
+              />
+              <!-- Bottom gradient -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#242423]/50 via-transparent to-transparent"></div>
+              <!-- Orange hover tint -->
+              <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-400"></div>
+              <!-- Number badge -->
+              <div class="absolute top-4 left-4 font-mono text-xs tracking-widest text-white/30">0{i+1}</div>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="font-display font-bold text-lg text-bg tracking-[-0.02em] leading-tight">{m.name}</span>
+              <span class="font-mono text-xs text-[#8a8068] tracking-[0.07em] uppercase">{m.role}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Hiring note -->
+      <div class="mt-14 flex flex-col sm:flex-row items-start sm:items-center gap-6 p-8 rounded-2xl bg-white/60 border border-black/8">
+        <div class="w-11 h-11 rounded-full bg-accent/12 flex items-center justify-center shrink-0">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#ff8a3b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="7" r="4" stroke="#ff8a3b" stroke-width="1.5"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#ff8a3b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <span class="font-display font-bold text-base text-bg block mb-0.5">We're growing — carefully.</span>
+          <span class="font-body font-light text-base text-[#7a7060]">We only hire engineers who raise the bar for everyone around them. If that's you, we'd love to talk.</span>
+        </div>
+        <a href="mailto:careers@syntanic.com" class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 border border-black/12 rounded-full font-display font-semibold text-sm text-bg hover:border-accent hover:text-accent transition-colors duration-200 no-underline whitespace-nowrap">
+          Join us
+          <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-0 bg-bg">
+    <div class="relative max-w-[700px] mx-auto px-10 py-36 text-center overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] pointer-events-none" style="background: radial-gradient(ellipse, rgba(255,138,59,0.07) 0%, transparent 70%);"></div>
+      <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-8">Get in touch</p>
+      <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-[0.95] mb-6" style="font-size: clamp(3rem, 7vw, 6.5rem);">
+        Let's build<br /><em class="italic text-accent">something great</em>
+      </h2>
+      <p class="font-body font-light text-lg leading-[1.7] text-muted mb-10">Tell us about your project. We'll respond within 24 hours.</p>
+      <a href="/contact" class="inline-flex items-center gap-2 px-9 py-4 bg-accent hover:bg-accent-dark text-bg font-display font-bold text-lg rounded-full no-underline transition-colors duration-200 shadow-[0_2px_16px_rgba(255,138,59,0.25)] hover:shadow-[0_6px_24px_rgba(255,138,59,0.35)] hover:-translate-y-px active:translate-y-0">
+        Start a project
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</Layout>

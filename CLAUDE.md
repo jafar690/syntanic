@@ -15,6 +15,13 @@
 
 ## Screenshot Workflow
 - **Always screenshot from localhost:** `node screenshot.mjs http://localhost:4321`
+- `node screenshot.mjs http://localhost:4321 [name] [desktop|tablet|mobile]`
+
+Examples:
+- `node screenshot.mjs http://localhost:4321`
+- `node screenshot.mjs http://localhost:4321 hero`
+- `node screenshot.mjs http://localhost:4321 hero mobile`
+
 - Screenshots are saved automatically to `./screenshots/screenshot-N.png` (auto-incremented, never overwritten).
 - Optional label suffix: `node screenshot.mjs http://localhost:4321 label` → saves as `label.png`
 - `screenshot.mjs` lives in the project root. Use it as-is.
@@ -24,6 +31,7 @@
 
 ## Output Defaults
 - Placeholder images: `https://placehold.co/WIDTHxHEIGHT`
+- use tailwind css
 - Mobile-first responsive
 
 ## Brand Assets

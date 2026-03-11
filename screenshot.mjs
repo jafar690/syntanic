@@ -4,9 +4,10 @@ import path from "path";
 
 const url = process.argv[2];
 const name = process.argv[3];
+const screen = process.argv[4] || "desktop";
 
 if (!url) {
-    console.error("Usage: node screenshot.mjs <url> [name]");
+    console.error("Usage: node screenshot.mjs <url> [name] [desktop|tablet|mobile]");
     process.exit(1);
 }
 
@@ -28,22 +29,54 @@ function getNextScreenshotName() {
     return `screenshot-${next}.png`;
 }
 
-const filename = name ? `${name}.png` : getNextScreenshotName();
+const baseName = name ? name : getNextScreenshotName().replace(".png", "");
+const filename = `${baseName}-${screen}.png`;
 const outputPath = path.join(screenshotsDir, filename);
 
 (async () => {
-    const browser = await puppeteer.launch();
+
+    const browser = await puppeteer.launch({ headless: "new" });
     const page = await browser.newPage();
 
-    await page.setViewport({
-        width: 1440,
-        height: 900
+    // viewport presets
+    const viewports = {
+        desktop: { width: 1440, height: 900 },
+        tablet: { width: 1024, height: 1366 },
+        mobile: { width: 390, height: 844, isMobile: true, hasTouch: true }
+    };
+
+    const viewport = viewports[screen] || viewports.desktop;
+
+    await page.setViewport(viewport);
+
+    console.log(`Opening ${url} (${screen})`);
+
+    await page.goto(url, { waitUntil: "networkidle0" });
+
+    // wait for fonts
+    await page.evaluate(async () => {
+        if (document.fonts) await document.fonts.ready;
     });
 
-    console.log(`Opening ${url}`);
+    // disable animations
+    await page.addStyleTag({
+        content: `
+      *,
+      *::before,
+      *::after {
+        animation-delay: -1s !important;
+        animation-duration: 0s !important;
+        animation-play-state: paused !important;
+        transition: none !important;
+      }
+    `
+    });
 
-    await page.goto(url, {
-        waitUntil: "networkidle2"
+    // layout stabilization
+    await page.evaluate(() => {
+        return new Promise(resolve => {
+            requestAnimationFrame(() => requestAnimationFrame(resolve));
+        });
     });
 
     await page.screenshot({
@@ -54,4 +87,5 @@ const outputPath = path.join(screenshotsDir, filename);
     await browser.close();
 
     console.log(`Saved screenshot to ${outputPath}`);
+
 })();
