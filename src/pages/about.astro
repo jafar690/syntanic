@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CtaSection from '../components/CtaSection.astro';
 ---
 
 <Layout title="About — Syntanic" description="We are Syntanic. A software development agency built on craft, clarity, and genuine ownership of the products we build.">
@@ -9,24 +10,24 @@ import Layout from '../layouts/Layout.astro';
     <!-- Blueprint grid texture -->
     <div class="absolute inset-0 opacity-[0.018]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 72px 72px;"></div>
     <!-- Glows -->
-    <div class="absolute top-0 left-0 w-[600px] h-[600px] pointer-events-none" style="background: radial-gradient(ellipse at 0% 0%, rgba(255,138,59,0.055) 0%, transparent 65%);"></div>
-    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] pointer-events-none" style="background: radial-gradient(ellipse at 100% 100%, rgba(56,193,173,0.04) 0%, transparent 65%);"></div>
+    <div class="absolute top-0 left-0 w-150 h-150 pointer-events-none" style="background: radial-gradient(ellipse at 0% 0%, rgba(255,138,59,0.055) 0%, transparent 65%);"></div>
+    <div class="absolute bottom-0 right-0 w-125 h-125 pointer-events-none" style="background: radial-gradient(ellipse at 100% 100%, rgba(56,193,173,0.04) 0%, transparent 65%);"></div>
 
-    <div class="max-w-[1280px] w-full mx-auto px-6 sm:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-16 lg:py-20">
+    <div class="max-w-320 w-full mx-auto px-6 sm:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-16 lg:py-20">
 
       <!-- Left: text -->
       <div>
-        <div class="inline-flex items-center gap-2 font-mono text-xs tracking-[0.1em] uppercase text-accent mb-10 opacity-0 [animation:fadeUp_0.5s_ease_0.1s_forwards]">
+        <div class="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-accent mb-10 opacity-0 [animation:fadeUp_0.5s_ease_0.1s_forwards]">
           <span class="w-1.5 h-1.5 bg-accent rounded-full [animation:blink_2s_ease-in-out_infinite]"></span>
           About us
         </div>
 
-        <h1 class="font-display font-extrabold tracking-[-0.04em] text-cream leading-[0.92] mb-10 opacity-0 [animation:fadeUp_0.7s_cubic-bezier(0.22,1,0.36,1)_0.2s_forwards]"
+        <h1 class="font-display font-extrabold tracking-display text-cream leading-[0.92] mb-10 opacity-0 [animation:fadeUp_0.7s_cubic-bezier(0.22,1,0.36,1)_0.2s_forwards]"
             style="font-size: clamp(3rem, 5.5vw, 5.5rem);">
           We are not<br/>your <em class="italic text-accent">typical</em><br/>agency.
         </h1>
 
-        <p class="font-body font-light text-lg leading-[1.8] text-muted max-w-[480px] mb-10 opacity-0 [animation:fadeUp_0.6s_ease_0.45s_forwards]">
+        <p class="font-body font-light text-lg leading-[1.8] text-muted max-w-120 mb-10 opacity-0 [animation:fadeUp_0.6s_ease_0.45s_forwards]">
           Founded in 2018, Syntanic is a software development agency built on a single belief: the best software happens when engineers think like product owners. We help startups and scale-ups ship ambitious digital products — on time, on budget, built to last.
         </p>
 
@@ -42,7 +43,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Right: system architecture SVG -->
       <div class="relative flex items-center justify-center opacity-0 [animation:fadeUp_0.9s_ease_0.35s_forwards] hidden lg:flex">
-        <svg viewBox="0 0 560 500" fill="none" class="w-full max-w-[540px]">
+        <svg viewBox="0 0 560 500" fill="none" class="w-full max-w-135">
           <defs>
             <pattern id="grid-dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
               <circle cx="20" cy="20" r="0.8" fill="#ffffff" opacity="0.07"/>
@@ -138,14 +139,14 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- STORY -->
   <section class="py-16 lg:py-32 bg-latte relative overflow-hidden">
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+    <div class="max-w-320 mx-auto px-6 sm:px-10">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
         <!-- Left: story text -->
         <div>
-          <p class="font-mono text-xs tracking-[0.12em] uppercase text-[#8a8068] mb-6">Our story</p>
-          <h2 class="font-display font-extrabold text-bg tracking-[-0.04em] leading-none mb-10" style="font-size: clamp(2.8rem, 5vw, 4.5rem);">
+          <p class="font-mono text-xs tracking-label uppercase text-[#8a8068] mb-6">Our story</p>
+          <h2 class="font-display font-extrabold text-bg tracking-display leading-none mb-10" style="font-size: clamp(2.8rem, 5vw, 4.5rem);">
             Built to do<br /><em class="italic text-accent">one thing well</em>
           </h2>
           <div class="flex flex-col gap-5 font-body font-light text-lg leading-[1.8] text-[#6b6860]">
@@ -165,7 +166,7 @@ import Layout from '../layouts/Layout.astro';
               <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent/15 font-display font-extrabold text-accent text-sm shrink-0">S</span>
               <div>
                 <span class="font-display font-semibold text-sm text-bg block">Syntanic Founder</span>
-                <span class="font-mono text-xs text-[#8a8068] tracking-[0.05em]">Est. 2018</span>
+                <span class="font-mono text-xs text-[#8a8068] tracking-wider">Est. 2018</span>
               </div>
             </footer>
           </blockquote>
@@ -197,8 +198,8 @@ import Layout from '../layouts/Layout.astro';
           { num: '$50M+',label: 'Value delivered'   },
         ].map(s => (
           <div class="bg-white hover:bg-[#fdfcf8] transition-colors duration-200 p-10 flex flex-col gap-1">
-            <span class="font-display font-extrabold text-bg leading-none tracking-[-0.04em]" style="font-size: clamp(2.5rem, 5vw, 4rem);">{s.num}</span>
-            <span class="font-mono text-xs tracking-[0.1em] uppercase text-[#8a8068]">{s.label}</span>
+            <span class="font-display font-extrabold text-bg leading-none tracking-display" style="font-size: clamp(2.5rem, 5vw, 4rem);">{s.num}</span>
+            <span class="font-mono text-xs tracking-widest uppercase text-[#8a8068]">{s.label}</span>
           </div>
         ))}
       </div>
@@ -208,12 +209,12 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- VALUES -->
   <section class="py-16 lg:py-32 bg-bg">
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+    <div class="max-w-320 mx-auto px-6 sm:px-10">
 
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
         <div>
-          <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-4">What drives us</p>
-          <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem);">
+          <p class="font-mono text-xs tracking-label uppercase text-muted mb-4">What drives us</p>
+          <h2 class="font-display font-extrabold text-cream tracking-display leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem);">
             The principles<br /><em class="italic text-accent">we build by</em>
           </h2>
         </div>
@@ -225,47 +226,47 @@ import Layout from '../layouts/Layout.astro';
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-3">
 
         <!-- 01 Ownership — large latte card -->
-        <div class="col-span-1 md:col-span-2 lg:col-span-4 rounded-2xl p-10 relative overflow-hidden group cursor-default" style="background: #f7f4e4; min-height: 300px;">
+        <div class="col-span-1 md:col-span-2 lg:col-span-4 rounded-2xl p-10 relative overflow-hidden group cursor-default bg-latte min-h-75">
           <div class="absolute top-0 left-0 right-0 h-1 bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl"></div>
-          <div class="absolute right-4 bottom-0 font-display font-extrabold leading-none text-[#242423]/[0.04] select-none pointer-events-none" style="font-size: 16rem; line-height: 0.85;">01</div>
+          <div class="absolute right-4 bottom-0 font-display font-extrabold leading-none text-bg/[0.04] select-none pointer-events-none" style="font-size: 16rem; line-height: 0.85;">01</div>
           <div class="relative">
-            <span class="font-mono text-xs tracking-[0.1em] text-accent/50 block mb-6">01</span>
-            <h3 class="font-display font-extrabold text-bg tracking-[-0.04em] leading-none mb-5" style="font-size: clamp(2.5rem, 4vw, 3.5rem);">Ownership</h3>
+            <span class="font-mono text-xs tracking-widest text-accent/50 block mb-6">01</span>
+            <h3 class="font-display font-extrabold text-bg tracking-display leading-none mb-5" style="font-size: clamp(2.5rem, 4vw, 3.5rem);">Ownership</h3>
             <p class="font-body font-light text-lg leading-[1.75] text-[#6b6860] max-w-lg">We treat your product like it's ours. That means asking hard questions, pushing back on bad decisions, and caring about outcomes — not just output. No "that's not in scope" conversations.</p>
           </div>
         </div>
 
         <!-- 02 Clarity — dark teal card -->
-        <div class="col-span-1 md:col-span-1 lg:col-span-2 rounded-2xl p-10 flex flex-col relative overflow-hidden group cursor-default" style="background: #0b2622; min-height: 300px;">
+        <div class="col-span-1 lg:col-span-2 rounded-2xl p-10 flex flex-col relative overflow-hidden group cursor-default bg-[#0b2622] min-h-75">
           <div class="absolute bottom-0 left-0 right-0 h-44 pointer-events-none" style="background: radial-gradient(ellipse at 50% 100%, rgba(56,193,173,0.12) 0%, transparent 70%);"></div>
           <div class="relative flex flex-col flex-1">
-            <span class="font-mono text-xs tracking-[0.1em] block mb-6" style="color: rgba(56,193,173,0.45)">02</span>
-            <h3 class="font-display font-extrabold leading-none tracking-[-0.04em] mb-5" style="font-size: 1.85rem; color: #a8e8e0;">Clarity</h3>
+            <span class="font-mono text-xs tracking-widest block mb-6" style="color: rgba(56,193,173,0.45)">02</span>
+            <h3 class="font-display font-extrabold leading-none tracking-display mb-5" style="font-size: 1.85rem; color: #a8e8e0;">Clarity</h3>
             <p class="font-body font-light text-base leading-[1.8] flex-1" style="color: #5a9e98;">Complexity is the enemy. Clean code, honest docs, transparent status updates. No surprise invoices. No mystery delivery dates. You always know exactly where things stand.</p>
           </div>
         </div>
 
         <!-- 03 Craft — orange card -->
-        <div class="col-span-1 md:col-span-1 lg:col-span-2 rounded-2xl p-10 flex flex-col relative overflow-hidden group cursor-default" style="background: #ff8a3b; min-height: 280px;">
-          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(0,0,0,0.07);"></div>
+        <div class="col-span-1 lg:col-span-2 rounded-2xl p-10 flex flex-col relative overflow-hidden group cursor-default bg-accent min-h-70">
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/[0.07]"></div>
           <!-- Decorative circle -->
-          <div class="absolute -right-8 -bottom-8 w-40 h-40 rounded-full border-2 border-[#242423]/10 pointer-events-none"></div>
-          <div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full border border-[#242423]/8 pointer-events-none"></div>
+          <div class="absolute -right-8 -bottom-8 w-40 h-40 rounded-full border-2 border-bg/10 pointer-events-none"></div>
+          <div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full border border-bg/8 pointer-events-none"></div>
           <div class="relative flex flex-col flex-1">
-            <span class="font-mono text-xs tracking-[0.1em] text-[#242423]/45 block mb-6">03</span>
-            <h3 class="font-display font-extrabold text-[#242423] leading-none tracking-[-0.04em] mb-5" style="font-size: 1.85rem;">Craft</h3>
-            <p class="font-body font-light text-base leading-[1.8] text-[#242423]/68 flex-1">We sweat the details users notice and the ones they don't. Performance, accessibility, edge cases — all of it matters. Good enough is never good enough.</p>
+            <span class="font-mono text-xs tracking-widest text-bg/45 block mb-6">03</span>
+            <h3 class="font-display font-extrabold text-bg leading-none tracking-display mb-5" style="font-size: 1.85rem;">Craft</h3>
+            <p class="font-body font-light text-base leading-[1.8] text-bg/68 flex-1">We sweat the details users notice and the ones they don't. Performance, accessibility, edge cases — all of it matters. Good enough is never good enough.</p>
           </div>
         </div>
 
         <!-- 04 Partnership — dark wide card with cyan -->
-        <div class="col-span-1 md:col-span-2 lg:col-span-4 rounded-2xl p-10 relative overflow-hidden group cursor-default" style="background: #141e20; min-height: 280px;">
+        <div class="col-span-1 md:col-span-2 lg:col-span-4 rounded-2xl p-10 relative overflow-hidden group cursor-default bg-[#141e20] min-h-70">
           <div class="absolute top-0 left-0 right-0 h-1 bg-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl"></div>
           <div class="absolute bottom-0 left-0 right-0 h-48 pointer-events-none" style="background: radial-gradient(ellipse at 30% 100%, rgba(91,193,225,0.07) 0%, transparent 70%);"></div>
           <div class="absolute right-4 bottom-0 font-display font-extrabold leading-none text-white/[0.03] select-none pointer-events-none" style="font-size: 16rem; line-height: 0.85;">04</div>
           <div class="relative">
-            <span class="font-mono text-xs tracking-[0.1em] text-cyan/35 block mb-6">04</span>
-            <h3 class="font-display font-extrabold text-cream leading-none tracking-[-0.04em] mb-5" style="font-size: clamp(2.5rem, 4vw, 3.5rem);">Partnership</h3>
+            <span class="font-mono text-xs tracking-widest text-cyan/35 block mb-6">04</span>
+            <h3 class="font-display font-extrabold text-cream leading-none tracking-display mb-5" style="font-size: clamp(2.5rem, 4vw, 3.5rem);">Partnership</h3>
             <p class="font-body font-light text-lg leading-[1.75] text-muted max-w-lg">We don't disappear after launch. We show up consistently, communicate proactively, and build relationships that outlast a single project. Our best clients have been with us for years.</p>
           </div>
         </div>
@@ -276,12 +277,12 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- TEAM -->
   <section id="team" class="py-16 lg:py-32 bg-latte">
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+    <div class="max-w-320 mx-auto px-6 sm:px-10">
 
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
         <div>
-          <p class="font-mono text-xs tracking-[0.12em] uppercase text-[#8a8068] mb-4">The people</p>
-          <h2 class="font-display font-extrabold text-bg tracking-[-0.04em] leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem);">
+          <p class="font-mono text-xs tracking-label uppercase text-[#8a8068] mb-4">The people</p>
+          <h2 class="font-display font-extrabold text-bg tracking-display leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem);">
             The team<br /><em class="italic text-accent">behind the work</em>
           </h2>
         </div>
@@ -302,7 +303,7 @@ import Layout from '../layouts/Layout.astro';
               <img
                 src={`https://placehold.co/400x500/${m.bg}`}
                 alt={m.name}
-                class="w-full h-full object-cover transition-all duration-500 group-hover:scale-[1.04]"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
               />
               <!-- Bottom gradient -->
               <div class="absolute inset-0 bg-gradient-to-t from-[#242423]/50 via-transparent to-transparent"></div>
@@ -341,22 +342,6 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-0 bg-bg">
-    <div class="relative max-w-[700px] mx-auto px-10 py-20 lg:py-36 text-center overflow-hidden">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] pointer-events-none" style="background: radial-gradient(ellipse, rgba(255,138,59,0.07) 0%, transparent 70%);"></div>
-      <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-8">Get in touch</p>
-      <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-[0.95] mb-6" style="font-size: clamp(3rem, 7vw, 6.5rem);">
-        Let's build<br /><em class="italic text-accent">something great</em>
-      </h2>
-      <p class="font-body font-light text-lg leading-[1.7] text-muted mb-10">Tell us about your project. We'll respond within 24 hours.</p>
-      <a href="/contact" class="inline-flex items-center gap-2 px-9 py-4 bg-accent hover:bg-accent-dark text-bg font-display font-bold text-lg rounded-full no-underline transition-colors duration-200 shadow-[0_2px_16px_rgba(255,138,59,0.25)] hover:shadow-[0_6px_24px_rgba(255,138,59,0.35)] hover:-translate-y-px active:translate-y-0">
-        Start a project
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
-  </section>
+  <CtaSection />
 
 </Layout>

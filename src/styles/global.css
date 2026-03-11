@@ -19,6 +19,10 @@
   --font-display: 'Plus Jakarta Sans', sans-serif;
   --font-body:    'DM Sans', sans-serif;
   --font-mono:    'JetBrains Mono', monospace;
+
+  /* Custom tracking tokens */
+  --tracking-display:  -0.04em;   /* tight display headings */
+  --tracking-label:     0.12em;   /* mono uppercase section labels */
 }
 
 html {

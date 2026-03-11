@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CtaSection from '../components/CtaSection.astro';
 ---
 
 <Layout>
@@ -9,16 +10,16 @@ import Layout from '../layouts/Layout.astro';
     <!-- Radial glow -->
     <div class="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_70%_60%_at_80%_30%,rgba(255,138,59,0.05)_0%,transparent_70%)] pointer-events-none"></div>
 
-    <div class="flex-1 max-w-[1280px] w-full mx-auto px-6 sm:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-12">
+    <div class="flex-1 max-w-320 w-full mx-auto px-6 sm:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-12">
 
       <!-- Left: text -->
       <div>
-        <div class="inline-flex items-center gap-2 font-mono text-xs tracking-[0.1em] uppercase text-accent mb-8 opacity-0 [animation:fadeUp_0.5s_ease_0.1s_forwards]">
+        <div class="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-accent mb-8 opacity-0 [animation:fadeUp_0.5s_ease_0.1s_forwards]">
           <span class="w-[7px] h-[7px] bg-accent rounded-full [animation:blink_2s_ease-in-out_infinite]"></span>
           Available for new projects
         </div>
 
-        <h1 class="font-display font-extrabold leading-[0.95] tracking-[-0.04em] text-cream flex flex-col mb-8"
+        <h1 class="font-display font-extrabold leading-[0.95] tracking-display text-cream flex flex-col mb-8"
             style="font-size: clamp(2.4rem, 4vw, 4.8rem)">
           <span class="block opacity-0 [animation:fadeUp_0.65s_cubic-bezier(0.22,1,0.36,1)_0.2s_forwards]">Meet your new</span>
           <span class="block text-accent italic opacity-0 [animation:fadeUp_0.65s_cubic-bezier(0.22,1,0.36,1)_0.35s_forwards]">product development</span>
@@ -26,7 +27,7 @@ import Layout from '../layouts/Layout.astro';
         </h1>
 
         <div class="flex flex-col gap-6 opacity-0 [animation:fadeUp_0.65s_ease_0.65s_forwards]">
-          <p class="font-body font-light text-lg leading-[1.7] text-muted max-w-[400px]">
+          <p class="font-body font-light text-lg leading-[1.7] text-muted max-w-100">
             Full-stack product engineering for startups and scale-ups. From idea to production.
           </p>
           <div class="flex items-center gap-5">
@@ -42,7 +43,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Right: floating product dashboard illustration -->
       <div class="hidden lg:flex items-center justify-center opacity-0 [animation:fadeUp_0.8s_ease_0.3s_forwards]">
-        <div class="relative w-full max-w-[520px]">
+        <div class="relative w-full max-w-130">
 
           <!-- Main dashboard window -->
           <div class="rounded-2xl overflow-hidden border border-white/15 shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
@@ -189,13 +190,13 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- SERVICES -->
   <section id="services" class="py-16 lg:py-28 bg-latte">
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+    <div class="max-w-320 mx-auto px-6 sm:px-10">
 
       <!-- Section header -->
       <div class="flex items-end justify-between mb-14 gap-8">
         <div>
-          <p class="font-mono text-xs tracking-[0.12em] uppercase text-[#8a8068] mb-4">01 — Services</p>
-          <h2 class="font-display font-extrabold text-bg tracking-[-0.04em] leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
+          <p class="font-mono text-xs tracking-label uppercase text-[#8a8068] mb-4">01 — Services</p>
+          <h2 class="font-display font-extrabold text-bg tracking-display leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
             What we<br /><em class="italic text-accent">do well</em>
           </h2>
         </div>
@@ -211,15 +212,15 @@ import Layout from '../layouts/Layout.astro';
         <!-- ─── ROW 1 ─────────────────────────────────────────── -->
 
         <!-- 01 Product Development — large dark featured card -->
-        <div class="col-span-1 md:col-span-2 lg:col-span-4 bg-[#242423] rounded-2xl p-10 flex flex-col justify-between min-h-[340px] group cursor-pointer hover:bg-[#2a2a28] transition-colors duration-300 relative overflow-hidden">
+        <div class="col-span-1 md:col-span-2 lg:col-span-4 bg-bg rounded-2xl p-10 flex flex-col justify-between min-h-85 group cursor-pointer hover:bg-[#2a2a28] transition-colors duration-300 relative overflow-hidden">
           <!-- Subtle dot-grid background texture -->
           <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 24px 24px;"></div>
           <!-- Hover arrow -->
-          <div class="absolute top-6 right-6 sm:top-8 sm:right-8 w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/30 group-hover:text-accent group-hover:border-accent/50 transition-all duration-300">
+          <div class="absolute top-6 right-6 sm:top-8 sm:right-8 w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/30 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="relative">
-            <span class="font-mono text-xs tracking-[0.1em] text-accent/70 block mb-5">01</span>
+            <span class="font-mono text-xs tracking-widest text-accent/70 block mb-5">01</span>
             <h3 class="font-display font-extrabold text-cream leading-none tracking-[-0.03em] mb-5" style="font-size: clamp(2rem, 3.5vw, 2.75rem)">Product<br/>Development</h3>
             <p class="font-body font-light text-lg leading-[1.7] text-[#8a8580] max-w-md">We build all of our projects using a single tech stack including Laravel (backend), Nuxt.js/Vue.js (frontend), Flutter (mobile apps).</p>
           </div>
@@ -239,11 +240,11 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- 02 API Integrations — dark teal compact card -->
-        <div class="col-span-1 md:col-span-1 lg:col-span-2 rounded-2xl p-9 flex flex-col justify-between min-h-[340px] group cursor-pointer transition-all duration-300 relative overflow-hidden" style="background: #0b2622;">
+        <div class="col-span-1 lg:col-span-2 rounded-2xl p-9 flex flex-col justify-between min-h-85 group cursor-pointer transition-colors duration-300 relative overflow-hidden bg-[#0b2622]">
           <!-- Teal glow -->
           <div class="absolute bottom-0 left-0 right-0 h-40 opacity-30" style="background: radial-gradient(ellipse at 50% 100%, #38c1ad 0%, transparent 70%);"></div>
           <div class="relative">
-            <span class="font-mono text-xs tracking-[0.1em] block mb-5" style="color: #38c1ad; opacity: 0.6">02</span>
+            <span class="font-mono text-xs tracking-widest block mb-5" style="color: #38c1ad; opacity: 0.6">02</span>
             <!-- Large centered illustration -->
             <div class="flex justify-center my-6">
               <svg width="120" height="60" viewBox="0 0 120 60" fill="none">
@@ -266,10 +267,10 @@ import Layout from '../layouts/Layout.astro';
         <!-- ─── ROW 2 ─────────────────────────────────────────── -->
 
         <!-- 03 UI/UX Design — warm yellow light card, tall -->
-        <div class="col-span-1 md:col-span-1 lg:col-span-2 rounded-2xl p-9 flex flex-col justify-between group cursor-pointer transition-all duration-300 relative overflow-hidden" style="background: #fffbee; min-height: 360px;">
+        <div class="col-span-1 lg:col-span-2 rounded-2xl p-9 flex flex-col justify-between group cursor-pointer transition-colors duration-300 relative overflow-hidden bg-[#fffbee] min-h-90">
           <div class="absolute top-0 left-0 right-0 h-1 bg-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl"></div>
           <div>
-            <span class="font-mono text-xs tracking-[0.1em] text-[#c49a00] block mb-5">03</span>
+            <span class="font-mono text-xs tracking-widest text-[#c49a00] block mb-5">03</span>
             <svg width="68" height="54" viewBox="0 0 72 56" fill="none" class="mb-6">
               <rect x="6"  y="4"  width="60" height="42" rx="6" fill="#ffb715" opacity="0.12"/>
               <rect x="6"  y="4"  width="60" height="11" rx="6" fill="#ffb715"/>
@@ -281,14 +282,14 @@ import Layout from '../layouts/Layout.astro';
             <h3 class="font-display font-extrabold text-bg text-2xl tracking-[-0.03em] leading-tight mb-4">UI/UX Design</h3>
             <p class="font-body font-light text-lg leading-[1.7] text-[#7a7060]">Our process focuses on distilling complex ideas into easy-to-understand diagrams, wireframes, and final products — user-centered and function-focused designs every time.</p>
           </div>
-          <div class="mt-4 inline-flex items-center gap-2 text-[#c49a00] font-display font-semibold text-sm group-hover:gap-3 transition-all duration-200">
+          <div class="mt-4 inline-flex items-center gap-2 text-[#c49a00] font-display font-semibold text-sm group-hover:gap-3 transition-[color,gap] duration-200">
             Learn more
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </div>
 
         <!-- 04 Design Implementation — dark wide card with pixel texture -->
-        <div class="col-span-1 md:col-span-2 lg:col-span-4 bg-[#242423] rounded-2xl p-10 flex flex-col justify-between group cursor-pointer hover:bg-[#2a2a28] transition-colors duration-300 relative overflow-hidden" style="min-height: 360px;">
+        <div class="col-span-1 md:col-span-2 lg:col-span-4 bg-bg rounded-2xl p-10 flex flex-col justify-between group cursor-pointer hover:bg-[#2a2a28] transition-colors duration-300 relative overflow-hidden min-h-90">
           <!-- Cyan pixel dot pattern bleeds from right -->
           <div class="absolute right-0 top-0 bottom-0 w-56 opacity-20 pointer-events-none">
             <svg width="100%" height="100%" viewBox="0 0 200 360" fill="none" preserveAspectRatio="xMaxYMid slice">
@@ -358,7 +359,7 @@ import Layout from '../layouts/Layout.astro';
             </svg>
           </div>
           <div class="relative">
-            <span class="font-mono text-xs tracking-[0.1em] text-cyan/60 block mb-5">04</span>
+            <span class="font-mono text-xs tracking-widest text-cyan/60 block mb-5">04</span>
             <h3 class="font-display font-extrabold text-cream leading-none tracking-[-0.03em] mb-5" style="font-size: clamp(1.8rem, 3vw, 2.5rem)">Design<br/>Implementation</h3>
             <p class="font-body font-light text-lg leading-[1.7] text-[#8a8580] max-w-sm">Ideation and iteration are the foundation of our design lifecycle. From wireframing to delivery, we design every screen from login to logout — matching each button, paragraph, and icon down to the pixel.</p>
           </div>
@@ -371,11 +372,11 @@ import Layout from '../layouts/Layout.astro';
         <!-- ─── ROW 3 ─────────────────────────────────────────── -->
 
         <!-- 05 Mobile App Development — full orange, energetic -->
-        <div class="col-span-1 md:col-span-1 lg:col-span-3 rounded-2xl p-10 flex flex-col justify-between group cursor-pointer transition-all duration-300 relative overflow-hidden" style="background: #ff8a3b; min-height: 320px;">
+        <div class="col-span-1 lg:col-span-3 rounded-2xl p-10 flex flex-col justify-between group cursor-pointer transition-colors duration-300 relative overflow-hidden bg-accent min-h-80">
           <!-- Darker orange vignette -->
           <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(0,0,0,0.06);"></div>
           <div class="relative flex justify-between items-start">
-            <span class="font-mono text-xs tracking-[0.1em] text-[#242423]/50">05</span>
+            <span class="font-mono text-xs tracking-widest text-bg/50">05</span>
             <!-- Large phone illustration -->
             <svg width="72" height="80" viewBox="0 0 72 80" fill="none" class="opacity-30 group-hover:opacity-50 transition-opacity duration-300">
               <rect x="30" y="4"  width="32" height="52" rx="8" fill="#242423"/>
@@ -386,8 +387,8 @@ import Layout from '../layouts/Layout.astro';
             </svg>
           </div>
           <div class="relative">
-            <h3 class="font-display font-extrabold text-[#242423] leading-none tracking-[-0.04em] mb-4" style="font-size: clamp(1.8rem, 3vw, 2.5rem)">Mobile App<br/>Development</h3>
-            <p class="font-body font-light text-lg leading-[1.7] text-[#242423]/65">We use the Google Flutter framework, which provides a clean, modern way of building mobile applications with an extensive library of components to layout each page.</p>
+            <h3 class="font-display font-extrabold text-bg leading-none tracking-display mb-4" style="font-size: clamp(1.8rem, 3vw, 2.5rem)">Mobile App<br/>Development</h3>
+            <p class="font-body font-light text-lg leading-[1.7] text-bg/65">We use the Google Flutter framework, which provides a clean, modern way of building mobile applications with an extensive library of components to layout each page.</p>
           </div>
         </div>
 
@@ -396,7 +397,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="absolute top-0 left-0 right-0 h-1 bg-teal opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl"></div>
           <div>
             <div class="flex justify-between items-start mb-6">
-              <span class="font-mono text-xs tracking-[0.1em] text-[#bbb]">06</span>
+              <span class="font-mono text-xs tracking-widest text-[#bbb]">06</span>
               <!-- Kanban illustration, prominent -->
               <svg width="80" height="64" viewBox="0 0 80 56" fill="none">
                 <rect x="2"  y="2"  width="20" height="8" rx="3" fill="#38c1ad"/>
@@ -422,7 +423,7 @@ import Layout from '../layouts/Layout.astro';
         <!-- ─── ROW 4 ─────────────────────────────────────────── -->
 
         <!-- 07 Code Audits — full-width dark featured -->
-        <div class="col-span-1 md:col-span-2 lg:col-span-6 rounded-2xl overflow-hidden group cursor-pointer relative" style="background: #18181600; min-height: 200px;">
+        <div class="col-span-1 md:col-span-2 lg:col-span-6 rounded-2xl overflow-hidden group cursor-pointer relative bg-transparent min-h-50">
           <div class="absolute inset-0 rounded-2xl" style="background: linear-gradient(135deg, #1a1a16 0%, #242423 50%, #1e2b28 100%);"></div>
           <!-- Decorative large brackets in background -->
           <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
@@ -437,7 +438,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="relative flex flex-col lg:flex-row items-start lg:items-center px-8 lg:px-12 py-10 gap-8 lg:gap-16">
             <!-- Left: text -->
             <div class="flex items-start gap-8 flex-1">
-              <span class="font-mono text-xs tracking-[0.1em] text-yellow/50 pt-1 shrink-0">07</span>
+              <span class="font-mono text-xs tracking-widest text-yellow/50 pt-1 shrink-0">07</span>
               <div>
                 <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none mb-4" style="font-size: clamp(1.8rem, 3vw, 2.5rem)">Code Audits</h3>
                 <p class="font-body font-light text-lg leading-[1.7] text-[#8a8580] max-w-2xl">Whether bringing a legacy application or just looking for a review of a new platform, we'll give a thoughtful, thorough code audit of both the backend and frontend and set you up for success in the next decade and beyond.</p>
@@ -466,12 +467,12 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- HOW TO ENGAGE -->
   <section id="engage" class="py-16 lg:py-28 bg-bg">
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+    <div class="max-w-320 mx-auto px-6 sm:px-10">
 
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
         <div>
-          <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-4">02 — How to engage</p>
-          <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
+          <p class="font-mono text-xs tracking-label uppercase text-muted mb-4">02 — How to engage</p>
+          <h2 class="font-display font-extrabold text-cream tracking-display leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
             Ways to<br /><em class="italic text-accent">work together</em>
           </h2>
         </div>
@@ -483,12 +484,12 @@ import Layout from '../layouts/Layout.astro';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 
         <!-- Fixed Project Delivery -->
-        <div class="group relative rounded-2xl overflow-hidden cursor-pointer" style="background: #f7f4e4;">
+        <div class="group relative rounded-2xl overflow-hidden cursor-pointer bg-latte">
           <div class="absolute top-0 left-0 bottom-0 w-1 bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="p-10 flex flex-col h-full min-h-[400px]">
+          <div class="p-10 flex flex-col h-full min-h-100">
             <div class="flex items-start justify-between mb-8">
-              <span class="font-display font-extrabold leading-none tracking-[-0.04em] text-accent" style="font-size: 5rem; line-height: 1;">01</span>
-              <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-[#6b6860] group-hover:bg-accent group-hover:border-accent group-hover:text-bg transition-all duration-300 mt-2">
+              <span class="font-display font-extrabold leading-none tracking-display text-accent" style="font-size: 5rem; line-height: 1;">01</span>
+              <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-[#6b6860] group-hover:bg-accent group-hover:border-accent group-hover:text-bg transition-colors duration-300 mt-2">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
             </div>
@@ -506,14 +507,14 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Monthly Retainer -->
-        <div class="group relative rounded-2xl overflow-hidden cursor-pointer" style="background: #242423;">
+        <div class="group relative rounded-2xl overflow-hidden cursor-pointer bg-bg">
           <div class="absolute top-0 left-0 right-0 h-1 bg-teal opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           <!-- Glow -->
           <div class="absolute bottom-0 left-0 right-0 h-48 pointer-events-none" style="background: radial-gradient(ellipse at 50% 100%, rgba(56,193,173,0.08) 0%, transparent 70%);"></div>
-          <div class="relative p-10 flex flex-col h-full min-h-[400px]">
+          <div class="relative p-10 flex flex-col h-full min-h-100">
             <div class="flex items-start justify-between mb-8">
-              <span class="font-display font-extrabold leading-none tracking-[-0.04em]" style="font-size: 5rem; line-height: 1; color: rgba(56,193,173,0.25);">02</span>
-              <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-muted group-hover:bg-teal group-hover:border-teal group-hover:text-bg transition-all duration-300 mt-2">
+              <span class="font-display font-extrabold leading-none tracking-display" style="font-size: 5rem; line-height: 1; color: rgba(56,193,173,0.25);">02</span>
+              <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-muted group-hover:bg-teal group-hover:border-teal group-hover:text-bg transition-colors duration-300 mt-2">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
             </div>
@@ -522,7 +523,7 @@ import Layout from '../layouts/Layout.astro';
             <ul class="mt-6 flex flex-col gap-2 border-t border-white/8 pt-6">
               {['Priority access & fast turnaround', 'Flexible task queue', 'Monthly capacity blocks'].map(f => (
                 <li class="flex items-center gap-2 font-body text-base text-muted">
-                  <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background: #38c1ad;"></span>
+                  <span class="w-1.5 h-1.5 rounded-full shrink-0 bg-teal"></span>
                   {f}
                 </li>
               ))}
@@ -531,23 +532,23 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Team Extension -->
-        <div class="group relative rounded-2xl overflow-hidden cursor-pointer" style="background: #ff8a3b;">
+        <div class="group relative rounded-2xl overflow-hidden cursor-pointer bg-accent">
           <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(0,0,0,0.06);"></div>
           <!-- Large decorative number -->
-          <div class="absolute right-4 top-2 font-display font-extrabold leading-none tracking-[-0.04em] text-[#242423]/8 select-none pointer-events-none" style="font-size: 11rem; line-height: 1;">03</div>
-          <div class="relative p-10 flex flex-col h-full min-h-[400px]">
+          <div class="absolute right-4 top-2 font-display font-extrabold leading-none tracking-display text-bg/8 select-none pointer-events-none" style="font-size: 11rem; line-height: 1;">03</div>
+          <div class="relative p-10 flex flex-col h-full min-h-100">
             <div class="flex items-start justify-between mb-8">
-              <span class="font-display font-extrabold leading-none tracking-[-0.04em] text-[#242423]/40" style="font-size: 5rem; line-height: 1;">03</span>
-              <div class="w-10 h-10 rounded-full border border-[#242423]/20 flex items-center justify-center text-[#242423]/50 group-hover:bg-[#242423] group-hover:border-[#242423] group-hover:text-accent transition-all duration-300 mt-2">
+              <span class="font-display font-extrabold leading-none tracking-display text-bg/40" style="font-size: 5rem; line-height: 1;">03</span>
+              <div class="w-10 h-10 rounded-full border border-bg/20 flex items-center justify-center text-bg/50 group-hover:bg-bg group-hover:border-bg group-hover:text-accent transition-colors duration-300 mt-2">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
             </div>
-            <h3 class="font-display font-extrabold text-[#242423] text-2xl tracking-[-0.03em] leading-tight mb-4">Team<br/>Extension</h3>
-            <p class="font-body font-light text-lg leading-[1.7] text-[#242423]/70 flex-1">Our engineers join your team. Same standup, same tools, same sprint — just a different payroll. Embed one or a whole squad.</p>
-            <ul class="mt-6 flex flex-col gap-2 border-t border-[#242423]/15 pt-6">
+            <h3 class="font-display font-extrabold text-bg text-2xl tracking-[-0.03em] leading-tight mb-4">Team<br/>Extension</h3>
+            <p class="font-body font-light text-lg leading-[1.7] text-bg/70 flex-1">Our engineers join your team. Same standup, same tools, same sprint — just a different payroll. Embed one or a whole squad.</p>
+            <ul class="mt-6 flex flex-col gap-2 border-t border-bg/15 pt-6">
               {['Embedded in your workflow', 'Your stack, your pace', 'Scale up or down anytime'].map(f => (
-                <li class="flex items-center gap-2 font-body text-base text-[#242423]/65">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#242423]/40 shrink-0"></span>
+                <li class="flex items-center gap-2 font-body text-base text-bg/65">
+                  <span class="w-1.5 h-1.5 rounded-full bg-bg/40 shrink-0"></span>
                   {f}
                 </li>
               ))}
@@ -560,7 +561,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- Bottom CTA -->
       <div class="mt-10 flex items-center justify-between flex-wrap gap-4 px-8 py-6 rounded-2xl border border-white/8">
         <p class="font-body font-light text-lg text-muted">Not sure which model fits? We'll spec out a custom engagement for you.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-bg font-display font-bold text-base rounded-full no-underline transition-all duration-200 shadow-[0_2px_16px_rgba(255,138,59,0.25)] hover:shadow-[0_6px_24px_rgba(255,138,59,0.35)] hover:-translate-y-px whitespace-nowrap">
+        <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-bg font-display font-bold text-base rounded-full no-underline transition-[background-color,box-shadow,transform] duration-200 shadow-[0_2px_16px_rgba(255,138,59,0.25)] hover:shadow-[0_6px_24px_rgba(255,138,59,0.35)] hover:-translate-y-px whitespace-nowrap">
           Schedule a call
           <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -571,9 +572,9 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- WORK -->
   <section id="work" class="py-16 lg:py-28 bg-bg2">
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10">
-      <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-3">03 — Selected work</p>
-      <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-none mb-16" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
+    <div class="max-w-320 mx-auto px-6 sm:px-10">
+      <p class="font-mono text-xs tracking-label uppercase text-muted mb-3">03 — Selected work</p>
+      <h2 class="font-display font-extrabold text-cream tracking-display leading-none mb-16" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
         Products we've<br /><em class="italic text-accent">shipped</em>
       </h2>
 
@@ -581,15 +582,15 @@ import Layout from '../layouts/Layout.astro';
         <!-- Item 01 -->
         <a href="#" class="group grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center gap-6 lg:gap-20 py-10 lg:py-16 no-underline text-inherit hover:opacity-85 transition-opacity duration-200">
           <div class="flex gap-6 lg:gap-8 items-start">
-            <span class="font-mono text-xs tracking-[0.1em] text-dim pt-1 shrink-0">01</span>
+            <span class="font-mono text-xs tracking-widest text-dim pt-1 shrink-0">01</span>
             <div class="flex flex-col gap-2">
-              <span class="font-mono text-xs tracking-[0.12em] uppercase text-accent">Fintech · SaaS</span>
+              <span class="font-mono text-xs tracking-label uppercase text-accent">Fintech · SaaS</span>
               <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem)">Meridian Finance</h3>
               <p class="font-body font-light text-base leading-[1.7] text-muted max-w-xs mt-1">Real-time portfolio analytics platform processing $2B in daily transactions across 18 markets.</p>
             </div>
           </div>
           <div class="relative rounded-xl overflow-hidden border border-white/8 aspect-[16/10]">
-            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Meridian Finance" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-all duration-500" />
+            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Meridian Finance" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-[opacity,transform] duration-500" />
             <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent"></div>
           </div>
         </a>
@@ -597,15 +598,15 @@ import Layout from '../layouts/Layout.astro';
         <!-- Item 02 -->
         <a href="#" class="group grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center gap-6 lg:gap-20 py-10 lg:py-16 no-underline text-inherit hover:opacity-85 transition-opacity duration-200">
           <div class="flex gap-6 lg:gap-8 items-start lg:order-2">
-            <span class="font-mono text-xs tracking-[0.1em] text-dim pt-1 shrink-0">02</span>
+            <span class="font-mono text-xs tracking-widest text-dim pt-1 shrink-0">02</span>
             <div class="flex flex-col gap-2">
-              <span class="font-mono text-xs tracking-[0.12em] uppercase text-accent">Healthcare · Platform</span>
+              <span class="font-mono text-xs tracking-label uppercase text-accent">Healthcare · Platform</span>
               <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem)">Pulse Health OS</h3>
               <p class="font-body font-light text-base leading-[1.7] text-muted max-w-xs mt-1">Patient management system serving 300+ clinics and 2M+ patient records across 12 countries.</p>
             </div>
           </div>
           <div class="relative rounded-xl overflow-hidden border border-white/8 aspect-[16/10] lg:order-1">
-            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Pulse Health OS" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-all duration-500" />
+            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Pulse Health OS" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-[opacity,transform] duration-500" />
             <div class="absolute inset-0 bg-gradient-to-br from-teal/5 to-transparent"></div>
           </div>
         </a>
@@ -613,15 +614,15 @@ import Layout from '../layouts/Layout.astro';
         <!-- Item 03 -->
         <a href="#" class="group grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center gap-6 lg:gap-20 py-10 lg:py-16 no-underline text-inherit hover:opacity-85 transition-opacity duration-200">
           <div class="flex gap-6 lg:gap-8 items-start">
-            <span class="font-mono text-xs tracking-[0.1em] text-dim pt-1 shrink-0">03</span>
+            <span class="font-mono text-xs tracking-widest text-dim pt-1 shrink-0">03</span>
             <div class="flex flex-col gap-2">
-              <span class="font-mono text-xs tracking-[0.12em] uppercase text-accent">E-commerce · Infrastructure</span>
+              <span class="font-mono text-xs tracking-label uppercase text-accent">E-commerce · Infrastructure</span>
               <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem)">Volta Commerce</h3>
               <p class="font-body font-light text-base leading-[1.7] text-muted max-w-xs mt-1">Headless commerce engine handling 40K concurrent users at peak. Zero downtime since launch.</p>
             </div>
           </div>
           <div class="relative rounded-xl overflow-hidden border border-white/8 aspect-[16/10]">
-            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Volta Commerce" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-all duration-500" />
+            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Volta Commerce" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-[opacity,transform] duration-500" />
             <div class="absolute inset-0 bg-gradient-to-br from-yellow/5 to-transparent"></div>
           </div>
         </a>
@@ -631,9 +632,9 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- PROCESS -->
   <section id="process" class="py-16 lg:py-28 bg-latte">
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10">
-      <p class="font-mono text-xs tracking-[0.12em] uppercase text-[#8a8068] mb-3">04 — How we work</p>
-      <h2 class="font-display font-extrabold text-bg tracking-[-0.04em] leading-none mb-16" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
+    <div class="max-w-320 mx-auto px-6 sm:px-10">
+      <p class="font-mono text-xs tracking-label uppercase text-[#8a8068] mb-3">04 — How we work</p>
+      <h2 class="font-display font-extrabold text-bg tracking-display leading-none mb-16" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
         A process built<br /><em class="italic text-accent">for clarity</em>
       </h2>
 
@@ -645,7 +646,7 @@ import Layout from '../layouts/Layout.astro';
           { num: '04', title: 'Launch & Beyond',  body: "We don't disappear after go-live. Monitoring, post-launch support, ongoing partnership — your terms." },
         ].map(s => (
           <div class="bg-white hover:bg-[#fdfcf8] transition-colors duration-200 p-10 flex flex-col gap-4">
-            <span class="font-mono text-xs tracking-[0.1em] text-accent">{s.num}</span>
+            <span class="font-mono text-xs tracking-widest text-accent">{s.num}</span>
             <h3 class="font-display font-bold text-bg text-xl tracking-[-0.02em]">{s.title}</h3>
             <p class="font-body font-light text-lg leading-[1.7] text-[#6b6860]">{s.body}</p>
           </div>
@@ -659,13 +660,13 @@ import Layout from '../layouts/Layout.astro';
     <!-- Subtle ambient glow -->
     <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 50% 60% at 80% 50%, rgba(91,193,225,0.03) 0%, transparent 70%);"></div>
 
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+    <div class="max-w-320 mx-auto px-6 sm:px-10">
 
       <!-- Header -->
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
         <div>
-          <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-4">05 — Tech stack</p>
-          <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
+          <p class="font-mono text-xs tracking-label uppercase text-muted mb-4">05 — Tech stack</p>
+          <h2 class="font-display font-extrabold text-cream tracking-display leading-none" style="font-size: clamp(2.8rem, 5.5vw, 5rem)">
             Built on<br /><em class="italic text-accent">proven tools</em>
           </h2>
         </div>
@@ -681,7 +682,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
           <div class="flex flex-col gap-2.5">
             <div class="w-5 h-1 rounded-full bg-cyan"></div>
-            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Frontend</span>
+            <span class="font-mono text-xs tracking-widest uppercase text-muted/50">Frontend</span>
           </div>
           <ul class="flex flex-col gap-2">
             {['React', 'Next.js', 'Vue.js', 'Nuxt.js', 'TypeScript', 'Tailwind CSS'].map(t => (
@@ -694,7 +695,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
           <div class="flex flex-col gap-2.5">
             <div class="w-5 h-1 rounded-full bg-teal"></div>
-            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Backend</span>
+            <span class="font-mono text-xs tracking-widest uppercase text-muted/50">Backend</span>
           </div>
           <ul class="flex flex-col gap-2">
             {['Node.js', 'Laravel', 'Express.js', 'Python', 'GraphQL', 'REST APIs'].map(t => (
@@ -707,7 +708,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
           <div class="flex flex-col gap-2.5">
             <div class="w-5 h-1 rounded-full bg-accent"></div>
-            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Mobile</span>
+            <span class="font-mono text-xs tracking-widest uppercase text-muted/50">Mobile</span>
           </div>
           <ul class="flex flex-col gap-2">
             {['Flutter', 'React Native', 'iOS', 'Android'].map(t => (
@@ -720,7 +721,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
           <div class="flex flex-col gap-2.5">
             <div class="w-5 h-1 rounded-full bg-yellow"></div>
-            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Database</span>
+            <span class="font-mono text-xs tracking-widest uppercase text-muted/50">Database</span>
           </div>
           <ul class="flex flex-col gap-2">
             {['PostgreSQL', 'MySQL', 'Redis', 'MongoDB', 'Supabase'].map(t => (
@@ -733,7 +734,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
           <div class="flex flex-col gap-2.5">
             <div class="w-5 h-1 rounded-full bg-white/30"></div>
-            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Cloud & Infra</span>
+            <span class="font-mono text-xs tracking-widest uppercase text-muted/50">Cloud & Infra</span>
           </div>
           <ul class="flex flex-col gap-2">
             {['AWS', 'GCP', 'Docker', 'Kubernetes', 'Vercel', 'CI/CD'].map(t => (
@@ -746,7 +747,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="group bg-bg2 p-8 flex flex-col gap-6 hover:bg-[#232322] transition-colors duration-300">
           <div class="flex flex-col gap-2.5">
             <div class="w-5 h-1 rounded-full" style="background: #b97bde;"></div>
-            <span class="font-mono text-xs tracking-[0.1em] uppercase text-muted/50">Design</span>
+            <span class="font-mono text-xs tracking-widest uppercase text-muted/50">Design</span>
           </div>
           <ul class="flex flex-col gap-2">
             {['Figma', 'Adobe XD', 'Storybook', 'Framer', 'Illustrator'].map(t => (
@@ -778,25 +779,7 @@ import Layout from '../layouts/Layout.astro';
 
   </section>
 
-  <!-- CTA -->
-  <section id="contact" class="py-0 bg-bg">
-    <div class="relative max-w-[700px] mx-auto px-10 py-36 text-center overflow-hidden">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse,rgba(255,138,59,0.07)_0%,transparent_70%)] pointer-events-none"></div>
-      <p class="font-mono text-xs tracking-[0.12em] uppercase text-muted mb-8">Get in touch</p>
-      <h2 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-[0.95] mb-6" style="font-size: clamp(3rem, 7vw, 6.5rem)">
-        Let's build<br /><em class="italic text-accent">something great</em>
-      </h2>
-      <p class="font-body font-light text-lg leading-[1.7] text-muted mb-10">Tell us about your project. We'll respond within 24 hours.</p>
-      <a href="mailto:hello@syntanic.com" class="inline-flex items-center gap-2 px-9 py-4 bg-accent hover:bg-accent-dark text-bg font-display font-bold text-lg rounded-full transition-all duration-200 no-underline shadow-[0_2px_16px_rgba(255,138,59,0.25)] hover:shadow-[0_6px_24px_rgba(255,138,59,0.35)] hover:-translate-y-px active:translate-y-0">
-        hello@syntanic.com
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
+  <CtaSection />
 
 </Layout>
 

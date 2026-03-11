@@ -8,25 +8,25 @@ import Layout from '../layouts/Layout.astro';
   <main class="min-h-svh bg-bg pt-24 pb-20 relative overflow-hidden">
 
     <!-- Ambient glow -->
-    <div class="absolute top-0 left-0 w-[600px] h-[500px] pointer-events-none" style="background: radial-gradient(ellipse at 0% 0%, rgba(255,138,59,0.05) 0%, transparent 65%);"></div>
-    <div class="absolute bottom-0 right-0 w-[500px] h-[400px] pointer-events-none" style="background: radial-gradient(ellipse at 100% 100%, rgba(56,193,173,0.04) 0%, transparent 65%);"></div>
+    <div class="absolute top-0 left-0 w-150 h-125 pointer-events-none" style="background: radial-gradient(ellipse at 0% 0%, rgba(255,138,59,0.05) 0%, transparent 65%);"></div>
+    <div class="absolute bottom-0 right-0 w-125 h-100 pointer-events-none" style="background: radial-gradient(ellipse at 100% 100%, rgba(56,193,173,0.04) 0%, transparent 65%);"></div>
 
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10">
+    <div class="max-w-320 mx-auto px-6 sm:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center">
 
         <!-- ── LEFT PANEL ────────────────────────────────── -->
         <div class="flex flex-col gap-10 relative">
 
           <!-- Decorative bleed number -->
-          <div class="absolute -left-10 -top-8 font-display font-extrabold leading-none tracking-[-0.05em] text-white/[0.025] select-none pointer-events-none hidden lg:block" style="font-size: 22rem; line-height: 1;">S</div>
+          <div class="absolute -left-10 -top-8 font-display font-extrabold leading-none tracking-tighter text-white/[0.025] select-none pointer-events-none hidden lg:block" style="font-size: 22rem; line-height: 1;">S</div>
 
           <div class="relative">
-            <div class="inline-flex items-center gap-2 font-mono text-xs tracking-[0.1em] uppercase text-accent mb-8 opacity-0 [animation:fadeUp_0.5s_ease_0.1s_forwards]">
+            <div class="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-accent mb-8 opacity-0 [animation:fadeUp_0.5s_ease_0.1s_forwards]">
               <span class="w-[7px] h-[7px] bg-accent rounded-full [animation:blink_2s_ease-in-out_infinite]"></span>
               Available for new projects
             </div>
 
-            <h1 class="font-display font-extrabold text-cream tracking-[-0.04em] leading-[0.93] opacity-0 [animation:fadeUp_0.7s_cubic-bezier(0.22,1,0.36,1)_0.2s_forwards]" style="font-size: clamp(3.5rem, 7vw, 6rem);">
+            <h1 class="font-display font-extrabold text-cream tracking-display leading-[0.93] opacity-0 [animation:fadeUp_0.7s_cubic-bezier(0.22,1,0.36,1)_0.2s_forwards]" style="font-size: clamp(3.5rem, 7vw, 6rem);">
               Let's start<br />
               <em class="italic text-accent">something</em><br />
               great.
@@ -92,7 +92,7 @@ import Layout from '../layouts/Layout.astro';
               <div class="flex flex-wrap gap-2" id="budget-chips">
                 {['Under $10k', '$10k – $50k', '$50k – $100k', '$100k+', 'Not sure yet'].map(b => (
                   <button type="button"
-                    class="inline-flex items-center py-[0.45rem] px-4 bg-transparent border border-white/10 rounded-full font-display text-sm font-medium text-muted cursor-pointer transition-all duration-150 whitespace-nowrap hover:border-accent/40 hover:text-cream hover:bg-accent/[0.06] data-[active]:bg-accent data-[active]:border-accent data-[active]:text-bg data-[active]:font-bold data-[active]:shadow-[0_2px_12px_rgba(255,138,59,0.25)]"
+                    class="inline-flex items-center py-[0.45rem] px-4 bg-transparent border border-white/10 rounded-full font-display text-sm font-medium text-muted cursor-pointer transition-[color,background-color,border-color,box-shadow] duration-150 whitespace-nowrap hover:border-accent/40 hover:text-cream hover:bg-accent/[0.06] data-[active]:bg-accent data-[active]:border-accent data-[active]:text-bg data-[active]:font-bold data-[active]:shadow-[0_2px_12px_rgba(255,138,59,0.25)]"
                     data-value={b}>{b}</button>
                 ))}
               </div>
@@ -103,7 +103,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="flex flex-col gap-2">
               <label class="font-mono text-xs tracking-[0.08em] uppercase text-[#7a756c]">Tell us about your project <span class="text-accent">*</span></label>
               <textarea name="message" rows="5" placeholder="Describe what you're building, the problem it solves, and any constraints we should know about..." required
-                class="border border-white/[0.08] rounded-[10px] p-4 px-5 bg-white/[0.03] min-h-[140px] w-full font-body text-base font-light text-cream outline-none transition-colors duration-200 placeholder:text-dim focus:border-accent/40 focus:bg-accent/[0.03] resize-y"></textarea>
+                class="border border-white/[0.08] rounded-[10px] p-4 px-5 bg-white/[0.03] min-h-35 w-full font-body text-base font-light text-cream outline-none transition-colors duration-200 placeholder:text-dim focus:border-accent/40 focus:bg-accent/[0.03] resize-y"></textarea>
             </div>
 
             <!-- How did you hear -->
