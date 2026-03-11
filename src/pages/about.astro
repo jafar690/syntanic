@@ -1,6 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CtaSection from '../components/CtaSection.astro';
+import ArrowIcon from '../components/ArrowIcon.astro';
+import { Image } from 'astro:assets';
+import imgBenjamin from '../assets/team/benjamin.png';
+import imgDorcas   from '../assets/team/dorcas.png';
+import imgVeronica from '../assets/team/veronica.png';
+import imgEmmanuel from '../assets/team/emmanuel.png';
+import imgAngela   from '../assets/team/angela.png';
+import imgJacinta  from '../assets/team/jacinta.png';
+import imgRichard  from '../assets/team/richard.png';
 ---
 
 <Layout title="About — Syntanic" description="We are Syntanic. A software development agency built on craft, clarity, and genuine ownership of the products we build.">
@@ -166,7 +175,7 @@ import CtaSection from '../components/CtaSection.astro';
               <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent/15 font-display font-extrabold text-accent text-sm shrink-0">S</span>
               <div>
                 <span class="font-display font-semibold text-sm text-bg block">Syntanic Founder</span>
-                <span class="font-mono text-xs text-[#8a8068] tracking-wider">Est. 2018</span>
+                <span class="font-mono text-xs text-[#8a8068] tracking-wider">Est. 2020</span>
               </div>
             </footer>
           </blockquote>
@@ -293,18 +302,33 @@ import CtaSection from '../components/CtaSection.astro';
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         {[
-          { name: 'Alex Rivera',  role: 'Founder & CEO',       bg: '2c2c2b/3a3a39' },
-          { name: 'Priya Nair',   role: 'Head of Engineering',  bg: '2c2c2b/3a3a39' },
-          { name: 'Jordan Kim',   role: 'Lead Designer',        bg: '2c2c2b/3a3a39' },
-          { name: 'Sam Torres',   role: 'Product Lead',         bg: '2c2c2b/3a3a39' },
+          { name: 'Benjamin Gakami',  role: 'Founder & CTO',            seed: 'BenjaminGakami',  img: imgBenjamin },
+          { name: 'Dorcas Kemuma',    role: 'Graphic Designer',          seed: 'DorcasKemuma',    img: imgDorcas   },
+          { name: 'Veronica Gikonyo', role: 'Web Developer',             seed: 'VeronicaGikonyo', img: imgVeronica },
+          { name: 'Emmanuel Karanja', role: 'Software Engineer',         seed: 'EmmanuelKaranja', img: imgEmmanuel },
+          { name: 'Edwin Nderitu',    role: 'Software Engineer',         seed: 'EdwinNderitu'                     },
+          { name: 'Angela Murugi',    role: 'Customer Success Manager',  seed: 'AngelaMurugi',    img: imgAngela   },
+          { name: 'Richard Mwangi',   role: 'Finance',                   seed: 'RichardMwangi',   img: imgRichard  },
+          { name: 'Jacinta Nina',     role: 'Marketing',                 seed: 'JacinaNina',      img: imgJacinta  },
         ].map((m, i) => (
           <div class="group flex flex-col gap-4">
             <div class="relative rounded-2xl overflow-hidden" style="aspect-ratio: 4/5;">
-              <img
-                src={`https://placehold.co/400x500/${m.bg}`}
-                alt={m.name}
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-              />
+              {m.img ? (
+                <Image
+                  src={m.img}
+                  alt={m.name}
+                  width={400}
+                  height={500}
+                  class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+              ) : (
+                <img
+                  src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${m.seed}&backgroundColor=e8e8e7`}
+                  alt={m.name}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  loading="eager"
+                />
+              )}
               <!-- Bottom gradient -->
               <div class="absolute inset-0 bg-gradient-to-t from-[#242423]/50 via-transparent to-transparent"></div>
               <!-- Orange hover tint -->
@@ -335,7 +359,7 @@ import CtaSection from '../components/CtaSection.astro';
         </div>
         <a href="mailto:careers@syntanic.com" class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 border border-black/12 rounded-full font-display font-semibold text-sm text-bg hover:border-accent hover:text-accent transition-colors duration-200 no-underline whitespace-nowrap">
           Join us
-          <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <ArrowIcon size={11} />
         </a>
       </div>
 
