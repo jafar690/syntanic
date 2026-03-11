@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import CtaSection from '../components/CtaSection.astro';
 import ArrowIcon from '../components/ArrowIcon.astro';
+import { Image } from 'astro:assets';
+import imgMykii     from '../assets/work/mykii.png';
+import imgSaleszote from '../assets/work/saleszote.png';
 ---
 
 <Layout>
@@ -581,52 +584,37 @@ import ArrowIcon from '../components/ArrowIcon.astro';
 
       <div class="flex flex-col divide-y divide-white/8 border-y border-white/8">
         <!-- Item 01 -->
-        <a href="#" class="group grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center gap-6 lg:gap-20 py-10 lg:py-16 no-underline text-inherit hover:opacity-85 transition-opacity duration-200">
+        <!-- Item 01 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center gap-6 lg:gap-20 py-10 lg:py-16">
           <div class="flex gap-6 lg:gap-8 items-start">
             <span class="font-mono text-xs tracking-widest text-dim pt-1 shrink-0">01</span>
             <div class="flex flex-col gap-2">
-              <span class="font-mono text-xs tracking-label uppercase text-accent">Fintech · SaaS</span>
-              <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem)">Meridian Finance</h3>
-              <p class="font-body font-light text-base leading-[1.7] text-muted max-w-xs mt-1">Real-time portfolio analytics platform processing $2B in daily transactions across 18 markets.</p>
+              <span class="font-mono text-xs tracking-label uppercase text-accent">Retail Technology · SaaS</span>
+              <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem)">Sales Zote</h3>
+              <p class="font-body font-light text-base leading-[1.7] text-muted max-w-xs mt-1">All-in-one retail business management platform with POS, inventory tracking, and analytics — built for businesses ready to scale.</p>
             </div>
           </div>
           <div class="relative rounded-xl overflow-hidden border border-white/8 aspect-[16/10]">
-            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Meridian Finance" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-[opacity,transform] duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent"></div>
+            <Image src={imgSaleszote} alt="Sales Zote platform screenshot" width={640} height={400} class="w-full h-full object-cover object-top opacity-80" />
+            <div class="absolute inset-0 bg-gradient-to-br from-teal/5 to-transparent"></div>
           </div>
-        </a>
+        </div>
 
         <!-- Item 02 -->
-        <a href="#" class="group grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center gap-6 lg:gap-20 py-10 lg:py-16 no-underline text-inherit hover:opacity-85 transition-opacity duration-200">
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center gap-6 lg:gap-20 py-10 lg:py-16">
           <div class="flex gap-6 lg:gap-8 items-start lg:order-2">
             <span class="font-mono text-xs tracking-widest text-dim pt-1 shrink-0">02</span>
             <div class="flex flex-col gap-2">
-              <span class="font-mono text-xs tracking-label uppercase text-accent">Healthcare · Platform</span>
-              <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem)">Pulse Health OS</h3>
-              <p class="font-body font-light text-base leading-[1.7] text-muted max-w-xs mt-1">Patient management system serving 300+ clinics and 2M+ patient records across 12 countries.</p>
+              <span class="font-mono text-xs tracking-label uppercase text-accent">Real Estate · SaaS</span>
+              <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem)">Mykii</h3>
+              <p class="font-body font-light text-base leading-[1.7] text-muted max-w-xs mt-1">Cloud-based estate agency growth platform helping agents manage properties, connect with clients, and scale their business from one place.</p>
             </div>
           </div>
           <div class="relative rounded-xl overflow-hidden border border-white/8 aspect-[16/10] lg:order-1">
-            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Pulse Health OS" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-[opacity,transform] duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-br from-teal/5 to-transparent"></div>
+            <Image src={imgMykii} alt="Mykii platform screenshot" width={640} height={400} class="w-full h-full object-cover object-top opacity-80" />
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent"></div>
           </div>
-        </a>
-
-        <!-- Item 03 -->
-        <a href="#" class="group grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center gap-6 lg:gap-20 py-10 lg:py-16 no-underline text-inherit hover:opacity-85 transition-opacity duration-200">
-          <div class="flex gap-6 lg:gap-8 items-start">
-            <span class="font-mono text-xs tracking-widest text-dim pt-1 shrink-0">03</span>
-            <div class="flex flex-col gap-2">
-              <span class="font-mono text-xs tracking-label uppercase text-accent">E-commerce · Infrastructure</span>
-              <h3 class="font-display font-extrabold text-cream tracking-[-0.03em] leading-none" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem)">Volta Commerce</h3>
-              <p class="font-body font-light text-base leading-[1.7] text-muted max-w-xs mt-1">Headless commerce engine handling 40K concurrent users at peak. Zero downtime since launch.</p>
-            </div>
-          </div>
-          <div class="relative rounded-xl overflow-hidden border border-white/8 aspect-[16/10]">
-            <img src="https://placehold.co/640x400/2c2c2b/4a4844" alt="Volta Commerce" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-[opacity,transform] duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-br from-yellow/5 to-transparent"></div>
-          </div>
-        </a>
+        </div>
       </div>
     </div>
   </section>
